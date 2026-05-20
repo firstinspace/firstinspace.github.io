@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WACD.ART CARTOONS · We Are Cosmic Dust</title>
+<meta name="description" content="Nat · Self-taught animator, collage artist & illustrator. We Are Cosmic Dust — animated films, illustrations, cosmic collages.">
+<meta property="og:title" content="WACD.ART CARTOONS">
+<meta property="og:description" content="We Are Cosmic Dust · Animated films · Illustrations · Collages">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --mid: #0a0a2e;
+  --star: #ffe066;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--deep); color: var(--white); font-family: 'Space Mono', monospace; overflow-x: hidden; }
+
+@media (pointer: fine) {
+  body { cursor: none; }
+  .cursor { width:12px;height:12px;background:var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen; }
+  .cursor-ring { width:36px;height:36px;border:1px solid var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.15s ease;mix-blend-mode:screen; }
+}
+@media (pointer: coarse) { .cursor,.cursor-ring { display:none!important; } }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1;transform:scale(1)} to{opacity:0.9;transform:scale(1.4)} }
+
+.nebula { position:fixed;border-radius:50%;filter:blur(80px);opacity:0.15;pointer-events:none;z-index:0;animation:drift 20s infinite alternate ease-in-out; }
+.nebula-1 { width:600px;height:600px;background:var(--purple);top:-200px;left:-100px; }
+.nebula-2 { width:500px;height:500px;background:var(--pink);bottom:-100px;right:-100px;animation-delay:-7s; }
+.nebula-3 { width:400px;height:400px;background:var(--cyan);top:40%;left:60%;animation-delay:-13s; }
+@keyframes drift { from{transform:translate(0,0) scale(1)} to{transform:translate(40px,30px) scale(1.1)} }
+
+.planet { position:fixed;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#5533aa,#1a0a3e 60%,#0a0020);box-shadow:inset -20px -10px 40px rgba(0,0,0,.8),0 0 60px rgba(123,47,255,.3);right:8%;top:18%;animation:floatPlanet 12s ease-in-out infinite alternate,rotatePlanet 30s linear infinite;z-index:0;pointer-events:none; }
+.planet::before { content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(123,47,255,.25);transform:rotateX(72deg) scaleX(1.6); }
+@keyframes floatPlanet { from{transform:translateY(0)} to{transform:translateY(-28px)} }
+@keyframes rotatePlanet { from{filter:hue-rotate(0deg)} to{filter:hue-rotate(360deg)} }
+
+.rocket { position:fixed;font-size:26px;z-index:0;pointer-events:none;animation:rocketFly 18s 3s infinite linear;opacity:0;filter:drop-shadow(0 0 10px rgba(255,45,120,.8)); }
+/* Rocket emoji 🚀 naturally points up — we rotate it 45° so it flies diagonally up-right.
+   It starts bottom-left and moves to top-right. */
+@keyframes rocketFly {
+  0%   { opacity:0;  left:-80px; bottom:-80px; transform:rotate(45deg); }
+  5%   { opacity:1; }
+  85%  { opacity:.9; }
+  100% { opacity:0;  left:110vw; bottom:110vh; transform:rotate(45deg); }
+}
+
+.asteroid { position:fixed;font-size:18px;z-index:0;pointer-events:none;animation:asteroidDrift var(--dur,25s) var(--delay,0s) infinite linear;opacity:0; }
+@keyframes asteroidDrift { 0%{opacity:0;transform:translateX(0) rotate(0deg)} 10%{opacity:.6} 90%{opacity:.4} 100%{opacity:0;transform:translateX(var(--tx,-120vw)) rotate(720deg)} }
+
+/* Comet: bright head on LEFT, tail streams to the RIGHT behind it.
+   Travels from right side of screen toward bottom-left. */
+.comet {
+  position:fixed;
+  height:2px;
+  border-radius:2px;
+  pointer-events:none;
+  z-index:0;
+  opacity:0;
+  /* tail gradient: solid on right (behind), fades to transparent on left (ahead) — reversed so head is left */
+  background: linear-gradient(to left, rgba(255,255,255,0), currentColor) !important;
+  animation:cometFly var(--dur,5s) var(--delay,0s) infinite linear;
+}
+/* bright head dot at the LEFT end */
+.comet::before {
+  content:'';
+  position:absolute;
+  left:0; top:50%;
+  transform:translate(-50%,-50%);
+  width:6px;height:6px;
+  border-radius:50%;
+  background:white;
+  box-shadow:0 0 8px 3px rgba(255,255,255,.95);
+}
+/* Comets start off-screen top-right, travel diagonally to bottom-left */
+@keyframes cometFly {
+  0%   { opacity:0;  transform:translate(0,0); }
+  5%   { opacity:1; }
+  90%  { opacity:.8; }
+  100% { opacity:0;  transform:translate(var(--tx,-900px), var(--ty,400px)); }
+}
+
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.95),transparent); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-links { display:flex;gap:32px;list-style:none; }
+.nav-links a { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s;position:relative; }
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--pink);transform:scaleX(0);transition:transform .3s; }
+.nav-links a:hover { color:var(--white); }
+.nav-links a:hover::after { transform:scaleX(1); }
+
+#hero { position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;z-index:1; }
+.hero-eyebrow { font-size:11px;letter-spacing:6px;color:var(--cyan);text-transform:uppercase;margin-bottom:24px;opacity:0;animation:fadeUp .8s .3s forwards; }
+.hero-title { font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(48px,12vw,120px);line-height:.9;letter-spacing:-2px;margin-bottom:8px;opacity:0;animation:fadeUp .8s .5s forwards; }
+.hero-title .wacd { color:var(--white); }
+.hero-title .dot { color:var(--pink); }
+.hero-title .art { color:transparent;-webkit-text-stroke:2px var(--pink);text-shadow:0 0 40px rgba(255,45,120,.5); }
+.hero-subtitle { font-family:'Unbounded',sans-serif;font-weight:300;font-size:clamp(12px,3vw,18px);letter-spacing:8px;color:var(--gray);text-transform:uppercase;margin-bottom:40px;opacity:0;animation:fadeUp .8s .7s forwards; }
+.hero-desc { max-width:500px;font-size:14px;line-height:1.9;color:var(--gray);margin-bottom:48px;opacity:0;animation:fadeUp .8s .9s forwards; }
+.hero-cta { display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .8s 1.1s forwards; }
+
+.btn-primary { background:var(--pink);color:white;padding:16px 36px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .3s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-block; }
+.btn-primary:hover { background:var(--white);color:var(--pink);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,45,120,.4); }
+.btn-outline { background:transparent;color:var(--cyan);padding:16px 36px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cyan);cursor:pointer;transition:all .3s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);display:inline-block; }
+.btn-outline:hover { background:rgba(0,245,212,.1);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,245,212,.2); }
+
+.deco-star { position:absolute;pointer-events:none;animation:floatStar 6s infinite alternate ease-in-out; }
+@keyframes floatStar { from{transform:translateY(0) rotate(0deg)} to{transform:translateY(-20px) rotate(30deg)} }
+
+.scroll-hint { position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.5s forwards; }
+.scroll-hint span { font-size:10px;letter-spacing:4px;color:var(--gray); }
+.scroll-line { width:1px;height:40px;background:linear-gradient(to bottom,var(--pink),transparent);animation:scrollPulse 2s infinite; }
+@keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin:0 auto; }
+.section-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px; }
+.section-title { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(28px,5vw,56px);line-height:1.1;margin-bottom:48px; }
+.section-divider { width:100%;height:1px;background:linear-gradient(to right,transparent,var(--purple),transparent); }
+
+.about-grid { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center; }
+.about-visual { position:relative; }
+.about-astronaut { font-size:120px;display:block;text-align:center;animation:floatStar 4s infinite alternate ease-in-out; }
+.about-glow { position:absolute;inset:0;background:radial-gradient(circle,rgba(123,47,255,.3),transparent 70%);pointer-events:none; }
+.about-text p { font-size:15px;line-height:2;color:var(--gray);margin-bottom:20px; }
+.about-text strong { color:var(--white); }
+.about-tags { display:flex;flex-wrap:wrap;gap:8px;margin-top:32px; }
+.tag { padding:6px 16px;border:1px solid var(--purple);font-size:11px;letter-spacing:2px;color:var(--cyan);background:rgba(123,47,255,.1); }
+
+.projects-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px; }
+.project-card { background:rgba(10,10,46,.6);border:1px solid rgba(123,47,255,.3);padding:32px;position:relative;overflow:hidden;transition:all .4s;backdrop-filter:blur(10px); }
+.project-card::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,45,120,.05),transparent);opacity:0;transition:opacity .4s; }
+.project-card:hover { border-color:var(--pink);transform:translateY(-8px);box-shadow:0 20px 60px rgba(255,45,120,.15); }
+.project-card:hover::before { opacity:1; }
+.project-icon { font-size:40px;margin-bottom:20px; }
+.project-type { font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase;margin-bottom:12px; }
+.project-name { font-family:'Orbitron',monospace;font-size:18px;margin-bottom:12px;color:var(--white); }
+.project-desc { font-size:13px;line-height:1.8;color:var(--gray); }
+.project-link { display:inline-block;margin-top:20px;font-size:11px;letter-spacing:3px;color:var(--cyan);text-decoration:none;text-transform:uppercase;transition:color .3s; }
+.project-link:hover { color:var(--white); }
+.project-link::after { content:' →'; }
+
+.socials-row { display:flex;gap:16px;flex-wrap:wrap;margin-top:48px; }
+.social-link { display:flex;align-items:center;gap:10px;padding:12px 24px;border:1px solid rgba(123,47,255,.4);color:var(--gray);text-decoration:none;font-size:12px;letter-spacing:2px;transition:all .3s;background:rgba(10,10,46,.4); }
+.social-link:hover { border-color:var(--cyan);color:var(--cyan);background:rgba(0,245,212,.05);transform:translateY(-2px); }
+
+.services-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px; }
+.service-item { padding:40px 32px;background:rgba(10,10,46,.4);border:1px solid rgba(123,47,255,.2);transition:all .3s; }
+.service-item:hover { background:rgba(123,47,255,.1);border-color:var(--cyan); }
+.service-num { font-family:'Orbitron',monospace;font-size:48px;font-weight:900;color:rgba(123,47,255,.2);margin-bottom:16px;line-height:1; }
+.service-name { font-family:'Unbounded',sans-serif;font-size:16px;font-weight:400;margin-bottom:12px;color:var(--white); }
+.service-desc { font-size:13px;line-height:1.8;color:var(--gray); }
+
+.blog-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
+.blog-card { border-top:1px solid rgba(255,45,120,.3);padding:32px 0;transition:all .3s;cursor:pointer; }
+.blog-card:hover { border-color:var(--pink); }
+.blog-date { font-size:10px;letter-spacing:4px;color:var(--pink);margin-bottom:12px; }
+.blog-title { font-family:'Unbounded',sans-serif;font-size:16px;font-weight:400;line-height:1.5;margin-bottom:12px;color:var(--white);transition:color .3s; }
+.blog-card:hover .blog-title { color:var(--cyan); }
+.blog-excerpt { font-size:13px;line-height:1.8;color:var(--gray); }
+
+.contact-form { display:flex;flex-direction:column;gap:16px;margin-top:40px;text-align:left; }
+.form-group { display:flex;flex-direction:column;gap:8px; }
+.form-group label { font-size:10px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase; }
+.form-group input,.form-group textarea,.form-group select { background:rgba(10,10,46,.6);border:1px solid rgba(123,47,255,.4);color:var(--white);padding:16px 20px;font-family:'Space Mono',monospace;font-size:13px;outline:none;transition:border-color .3s;resize:none;appearance:none; }
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:var(--pink); }
+.form-group select option { background:var(--mid); }
+.form-row { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.form-submit { background:var(--pink);color:white;padding:18px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:4px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;margin-top:8px; }
+.form-submit:hover { background:var(--white);color:var(--pink);box-shadow:0 8px 30px rgba(255,45,120,.4); }
+.form-note { font-size:11px;color:var(--gray);text-align:center;margin-top:8px;letter-spacing:1px; }
+.form-success { display:none;text-align:center;padding:40px;border:1px solid var(--cyan);color:var(--cyan);font-size:14px;letter-spacing:2px;margin-top:40px; }
+
+footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;border-top:1px solid rgba(123,47,255,.2); }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:20px;letter-spacing:4px;margin-bottom:16px; }
+.footer-logo span { color:var(--pink); }
+.footer-tagline { font-size:11px;letter-spacing:4px;color:var(--gray);margin-bottom:32px; }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s; }
+.reveal.visible { opacity:1;transform:translateY(0); }
+
+@media (max-width:768px) {
+  nav { padding:20px; }
+  .nav-links { display:none; }
+  section { padding:80px 20px; }
+  .about-grid { grid-template-columns:1fr;gap:40px; }
+  .about-astronaut { font-size:80px; }
+  .blog-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .planet { width:70px;height:70px;right:4%;top:12%; }
+  footer { padding:40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="stars-bg" id="starsBg"></div>
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+<div class="nebula nebula-3"></div>
+
+<div class="planet"></div>
+<div class="rocket">🚀</div>
+<div class="asteroid" style="top:30%;right:-40px;--dur:22s;--delay:5s;--tx:-110vw">🪨</div>
+<div class="asteroid" style="top:65%;right:-40px;--dur:30s;--delay:14s;--tx:-110vw;font-size:14px">🪨</div>
+<div class="comet" style="width:220px;color:rgba(0,245,212,.9);  top:8%; right:-220px; --dur:5s;  --delay:0s;  --tx:-1100px;--ty:350px; transform:rotate(20deg)"></div>
+<div class="comet" style="width:160px;color:rgba(255,45,120,.95); top:18%;right:-160px; --dur:6s;  --delay:3s;  --tx:-1000px;--ty:300px; transform:rotate(15deg)"></div>
+<div class="comet" style="width:190px;color:rgba(255,224,102,.85);top:3%; right:-190px; --dur:7s;  --delay:7s;  --tx:-1200px;--ty:450px; transform:rotate(25deg)"></div>
+<div class="comet" style="width:130px;color:rgba(123,47,255,.95); top:30%;right:-130px; --dur:5.5s;--delay:11s; --tx:-900px; --ty:250px; transform:rotate(12deg)"></div>
+<div class="comet" style="width:170px;color:rgba(0,245,212,.75); top:5%; right:-170px; --dur:6.5s;--delay:15s; --tx:-1050px;--ty:400px; transform:rotate(22deg)"></div>
+
+<nav>
+  <a href="#hero" class="nav-logo">WACD<span>.</span>ART</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <span class="deco-star" style="top:15%;left:10%;font-size:22px;color:var(--cyan)">★</span>
+  <span class="deco-star" style="top:20%;right:15%;font-size:26px;color:var(--pink);animation-delay:1s">✦</span>
+  <span class="deco-star" style="bottom:30%;left:8%;font-size:16px;color:var(--star);animation-delay:2s">★</span>
+  <span class="deco-star" style="top:45%;right:7%;font-size:18px;animation-delay:.5s">✧</span>
+  <p class="hero-eyebrow">· We Are Cosmic Dust ·</p>
+  <h1 class="hero-title"><span class="wacd">WACD</span><span class="dot">.</span><span class="art">ART</span></h1>
+  <p class="hero-subtitle">Cartoons</p>
+  <p class="hero-desc">Nat · Self-taught animator & collage artist.<br>Making animated films and illustrations<br>from cosmic dust and pure imagination.</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">See My Work</a>
+    <a href="#contact" class="btn-outline">Work With Me</a>
+  </div>
+  <div class="scroll-hint"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <span class="about-astronaut">🧑‍🚀</span>
+      <div class="about-glow"></div>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-label">About</p>
+      <h2 class="section-title">I am Nat.</h2>
+      <p>I'm a <strong>self-taught animator</strong> and collage artist. No courses, no teachers — just me, the screen, and the universe of ideas.</p>
+      <p>WACD stands for <strong>We Are Cosmic Dust</strong>. Everything we are and everything we create comes from stardust. That's the idea behind every frame I make.</p>
+      <p>I work with <strong>animation, collage, and illustration</strong> — building worlds frame by frame, from nothing.</p>
+      <div class="about-tags">
+        <span class="tag">ANIMATION</span>
+        <span class="tag">COLLAGE</span>
+        <span class="tag">ILLUSTRATION</span>
+        <span class="tag">ALIGHT MOTION</span>
+        <span class="tag">SELF-TAUGHT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="projects">
+  <p class="section-label reveal">Projects</p>
+  <h2 class="section-title reveal">My Work</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-icon">🎬</div>
+      <p class="project-type">Animated Series</p>
+      <h3 class="project-name">My Inner Thoughts</h3>
+      <p class="project-desc">A series of animated short films — inner monologues turned into cosmic visuals. Episodes 1–5 released.</p>
+      <a href="https://www.youtube.com/@wacdverse" target="_blank" class="project-link">Watch on YouTube</a>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">🌌</div>
+      <p class="project-type">Animation</p>
+      <h3 class="project-name">WACD Cartoons</h3>
+      <p class="project-desc">Cosmic collage animations built in Alight Motion. Where space, dreams and everyday life collide.</p>
+      <a href="https://www.instagram.com/wacdcartoons" target="_blank" class="project-link">View on Instagram</a>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">✦</div>
+      <p class="project-type">Illustration & Collage</p>
+      <h3 class="project-name">Portfolio</h3>
+      <p class="project-desc">Digital illustrations and collage works — surreal, cosmic, and deeply personal visual stories.</p>
+      <a href="https://www.behance.net/" target="_blank" class="project-link">See on Behance</a>
+    </div>
+  </div>
+  <div class="socials-row reveal">
+    <a href="https://www.youtube.com/@wacdverse" target="_blank" class="social-link">▶ YouTube · RU · EN</a>
+    <a href="https://www.instagram.com/wacdcartoons" target="_blank" class="social-link">◈ Instagram</a>
+    <a href="#" target="_blank" class="social-link">✈ Telegram</a>
+    <a href="https://www.behance.net/" target="_blank" class="social-link">✦ Behance</a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="services">
+  <p class="section-label reveal">Services</p>
+  <h2 class="section-title reveal">Work With Me</h2>
+  <div class="services-grid">
+    <div class="service-item reveal">
+      <div class="service-num">01</div>
+      <h3 class="service-name">Animation</h3>
+      <p class="service-desc">Short animated films, motion graphics, animated posts for social media. Cosmic, surreal, personal — your story in motion.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-num">02</div>
+      <h3 class="service-name">Collage Art</h3>
+      <p class="service-desc">Digital collages for covers, posters, social media, or just for your wall. Surreal worlds built from fragments.</p>
+    </div>
+    <div class="service-item reveal">
+      <div class="service-num">03</div>
+      <h3 class="service-name">Illustration</h3>
+      <p class="service-desc">Character design, scene illustration, digital art. Every piece is a small universe.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="blog">
+  <p class="section-label reveal">Blog</p>
+  <h2 class="section-title reveal">Cosmic Notes</h2>
+  <div class="blog-grid">
+    <div class="blog-card reveal">
+      <p class="blog-date">2025 · 01</p>
+      <h3 class="blog-title">How I learned animation without a single course</h3>
+      <p class="blog-excerpt">Coming soon — the story of figuring it out alone, one mistake at a time.</p>
+    </div>
+    <div class="blog-card reveal">
+      <p class="blog-date">2025 · 02</p>
+      <h3 class="blog-title">Alight Motion: what I actually use and why</h3>
+      <p class="blog-excerpt">Coming soon — a practical breakdown of my mobile animation toolkit.</p>
+    </div>
+    <div class="blog-card reveal">
+      <p class="blog-date">2025 · 03</p>
+      <h3 class="blog-title">We Are Cosmic Dust — what does it really mean?</h3>
+      <p class="blog-excerpt">Coming soon — the philosophy behind the name.</p>
+    </div>
+    <div class="blog-card reveal">
+      <p class="blog-date">2025 · 04</p>
+      <h3 class="blog-title">Building a creative brand with zero budget</h3>
+      <p class="blog-excerpt">Coming soon — honest notes from the road.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="contact" style="max-width:700px;text-align:center;">
+  <p class="section-label reveal">Contact</p>
+  <h2 class="section-title reveal">Let's Create Something</h2>
+  <p class="reveal" style="color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:8px;">Have a project in mind? An idea? Or just want to say hello — write to me. I read everything.</p>
+  <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+    <div class="form-row">
+      <div class="form-group"><label>Your name</label><input type="text" name="name" required placeholder="..."></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="..."></div>
+    </div>
+    <div class="form-group">
+      <label>What do you need?</label>
+      <select name="service">
+        <option value="animation">Animation</option>
+        <option value="collage">Collage Art</option>
+        <option value="illustration">Illustration</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Tell me about your project</label><textarea name="message" rows="5" required placeholder="..."></textarea></div>
+    <button type="submit" class="form-submit">Send Message ✦</button>
+    <p class="form-note">I respond within 1–2 days.</p>
+  </form>
+  <div class="form-success" id="formSuccess">✦ Message sent! I'll be in touch soon. ✦</div>
+</section>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-tagline">· WE ARE COSMIC DUST ·</p>
+  <div class="socials-row" style="justify-content:center;margin-bottom:32px;">
+    <a href="https://www.youtube.com/@wacdverse" target="_blank" class="social-link">▶ YouTube</a>
+    <a href="https://www.instagram.com/wacdcartoons" target="_blank" class="social-link">◈ Instagram</a>
+    <a href="#" target="_blank" class="social-link">✈ Telegram</a>
+    <a href="https://www.behance.net/" target="_blank" class="social-link">✦ Behance</a>
+  </div>
+  <p class="footer-copy">© 2025 WACD.ART CARTOONS · NAT · ALL RIGHTS RESERVED</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 120; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2.5 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.5+.1}`;
+  bg.appendChild(s);
+}
+
+if (window.matchMedia('(pointer: fine)').matches) {
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
+  });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  try {
+    const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+    if (res.ok) { this.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }
+  } catch(err) { alert('Error sending. Please try again.'); }
+});
+</script>
+</body>
+</html>
