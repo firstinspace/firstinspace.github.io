@@ -139,6 +139,12 @@ section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin
 .service-desc { font-size:13px;line-height:1.8;color:var(--gray); }
 .service-badge { display:inline-block;margin-bottom:12px;font-size:9px;letter-spacing:3px;color:var(--pink);border:1px solid rgba(255,45,120,.3);padding:3px 10px;text-transform:uppercase; }
 
+.faq-list { display:flex;flex-direction:column;gap:2px; }
+.faq-item { padding:32px;background:rgba(10,10,46,.4);border:1px solid rgba(123,47,255,.2);transition:all .3s; }
+.faq-item:hover { border-color:var(--cyan);background:rgba(123,47,255,.05); }
+.faq-q { font-family:'Unbounded',sans-serif;font-size:15px;font-weight:400;color:var(--white);margin-bottom:12px; }
+.faq-a { font-size:13px;line-height:1.9;color:var(--gray); }
+
 .blog-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
 .blog-card { border-top:1px solid rgba(255,45,120,.3);padding:32px 0;transition:all .3s;cursor:pointer; }
 .blog-card:hover { border-color:var(--pink); }
@@ -333,6 +339,35 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <div class="section-divider"></div>
 
+<section id="faq" style="max-width:800px;">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="section-title reveal">Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <h3 class="faq-q">What is collage animation?</h3>
+      <p class="faq-a">Collage animation is a style where photos, textures, art objects and video are combined into surreal moving visuals. It creates a unique aesthetic that stands out on social media and works well for lifestyle, psychology, astrology and personal brands.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 class="faq-q">What types of animation do you create?</h3>
+      <p class="faq-a">I create three styles: collage animation, 2D vector animation with clean characters and scenes, and 2D character animation with hand-drawn personality. I also produce animated product cards and AI-generated visual content.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 class="faq-q">How do I order animation for my brand?</h3>
+      <p class="faq-a">Fill out the contact form on this page or write to me directly. Tell me about your project, the format you need and your timeline. I respond within 1–2 days.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 class="faq-q">What tools do you use?</h3>
+      <p class="faq-a">I work primarily in Alight Motion for 2D and collage animation. For AI-generated content I use the latest image and video generation tools.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 class="faq-q">Can you create animation for social media — Instagram, TikTok, YouTube?</h3>
+      <p class="faq-a">Yes. I create animated content optimised for all major platforms — Reels, TikTok videos, YouTube Shorts, stories and feed posts.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section id="blog">
   <p class="section-label reveal">Blog</p>
   <h2 class="section-title reveal">Cosmic Notes</h2>
@@ -398,7 +433,7 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     <a href="#" target="_blank" class="social-link">✈ Telegram</a>
     <a href="https://www.behance.net/natamomo" target="_blank" class="social-link">✦ Behance</a>
   </div>
-  <p class="footer-copy">© 2025 WACD.ART — 2D Animator · Motion Artist · All rights reserved</p>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist · All rights reserved</p>
 </footer>
 
 <script>
