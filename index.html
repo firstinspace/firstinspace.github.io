@@ -139,6 +139,21 @@ section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin
 .service-desc { font-size:13px;line-height:1.8;color:var(--gray); }
 .service-badge { display:inline-block;margin-bottom:12px;font-size:9px;letter-spacing:3px;color:var(--pink);border:1px solid rgba(255,45,120,.3);padding:3px 10px;text-transform:uppercase; }
 
+/* Peek character */
+.peek-character { position:fixed;bottom:0;right:40px;width:160px;z-index:50;pointer-events:none;animation:peekUp 12s 4s infinite ease-in-out; }
+.peek-character img { width:100%;display:block; }
+@keyframes peekUp {
+  0%   { transform:translateY(100%); }
+  10%  { transform:translateY(20%); }
+  40%  { transform:translateY(20%); }
+  50%  { transform:translateY(100%); }
+  100% { transform:translateY(100%); }
+}
+
+/* Floating star PNG */
+.bg-star-png { position:fixed;width:80px;top:60%;left:5%;z-index:0;pointer-events:none;opacity:0.7;animation:floatStar 7s infinite alternate ease-in-out;mix-blend-mode:screen; }
+.bg-star-png img { width:100%;mix-blend-mode:screen; }
+
 .faq-list { display:flex;flex-direction:column;gap:2px; }
 .faq-item { padding:32px;background:rgba(10,10,46,.4);border:1px solid rgba(123,47,255,.2);transition:all .3s; }
 .faq-item:hover { border-color:var(--cyan);background:rgba(123,47,255,.05); }
@@ -200,6 +215,16 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <div class="planet"></div>
 <div class="rocket">🚀</div>
+
+<!-- Spaceman выглядывает снизу-справа -->
+<div class="peek-character">
+  <img src="Spaceman.webp" alt="WACD.ART spaceman">
+</div>
+
+<!-- Звезда летает в фоне -->
+<div class="bg-star-png">
+  <img src="2danimation.png" alt="star">
+</div>
 <div class="asteroid" style="top:30%;right:-40px;--dur:22s;--delay:5s;--tx:-110vw">🪨</div>
 <div class="asteroid" style="top:65%;right:-40px;--dur:30s;--delay:14s;--tx:-110vw;font-size:14px">🪨</div>
 <div class="comet" style="width:220px;color:rgba(0,245,212,.9);top:8%;right:-220px;--dur:5s;--delay:0s;--tx:-1100px;--ty:350px;transform:rotate(20deg)"></div>
@@ -250,11 +275,12 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
       <h2 class="section-title">2D Animator · Motion Artist</h2>
       <p>I create <strong>2D animations and collage videos</strong> — for brands, social media and stories worth telling.</p>
       <p>The name WACD was born after a BBC documentary about the birth of our solar system. Gravity gathered cosmic dust — and a planet appeared. We are literally made of stellar matter. What power — to create an entire world from dust.</p>
-      <p> That's what I try to do in every project. Through animation, motion design and visual storytelling, I turn ideas and imagination into <strong> something that can be felt.</strong></p>
+      <p>That's what I try to do in every project. From an idea and imagination — <strong>create something that can be felt.</strong></p>
       <div class="about-tags">
         <span class="tag">2D ANIMATION</span>
         <span class="tag">MOTION ART</span>
         <span class="tag">COLLAGE VIDEO</span>
+        <span class="tag">ALIGHT MOTION</span>
         <span class="tag">INDEPENDENT</span>
       </div>
     </div>
@@ -370,11 +396,30 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 <section id="blog">
   <p class="section-label reveal">Blog</p>
   <h2 class="section-title reveal">Cosmic Notes</h2>
+  <div style="position:relative;">
+    <img src="Collage.png" alt="WACD.ART collage animation" style="position:absolute;right:-60px;top:-40px;width:220px;opacity:0.85;mix-blend-mode:screen;pointer-events:none;z-index:0;">
   <div class="blog-grid">
-    <div class="blog-card reveal">
+    <div class="blog-card reveal" id="post-1">
       <p class="blog-date">2025 · 01</p>
-      <h3 class="blog-title">How I learned animation without a single course</h3>
-      <p class="blog-excerpt">Coming soon — the story of figuring it out alone, one mistake at a time.</p>
+      <h3 class="blog-title">How I Learned Animation Without a Single Course</h3>
+      <p class="blog-excerpt">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives...</p>
+      <a class="project-link" style="cursor:pointer;" onclick="document.getElementById('article-1').style.display='block';this.style.display='none';">Read more</a>
+      <div id="article-1" style="display:none;margin-top:24px;">
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives. I was fascinated by how still images could tell a story through movement. I wanted to create something similar myself.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">My first animation was a simple Halloween project made with Photoshop and PowerPoint. It was far from perfect, but it was enough to make me curious about animation.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Later, a friend on Instagram introduced me to Alight Motion. It became my main tool for exploring 2D animation, collage videos and visual storytelling. I spent countless hours experimenting, searching for answers, and learning through trial and error.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Like many beginners, I started by recreating other people's work. It helped me understand timing, movement and technique. But after a while I realized something was missing.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">The animations looked fine, yet they felt empty.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">There were no personal ideas in them. No emotions. No point of view. I was learning how to animate, but I wasn't creating anything that felt like mine. That was the first time I seriously thought about giving up.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Then a request came in for a birthday animation. Soon there was another project, and then another. Real people trusted me with their stories, and animation stopped being just an experiment.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">One of the first projects I was truly proud of was an animation for an organization helping homeless cats. Later I created work for a women's business forum and other clients. With every project I learned a little more about storytelling through motion.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The biggest change happened when I stopped looking for someone else's style and started looking for my own.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Today my work combines 2D animation, collage animation and motion design. Cosmic imagery, surreal compositions and visual metaphors appear again and again in my projects. They became part of a language that feels natural to me.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">I still consider myself self-taught. Every project teaches me something new.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Looking back, the hardest part was not learning the software. The hardest part was finding my own voice.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);font-style:italic;">In a world full of templates, trends and endless references, creating something personal is still the most rewarding part of animation.</p>
+        <p style="font-size:12px;color:var(--pink);margin-top:20px;letter-spacing:2px;">— WACD.ART</p>
+      </div>
     </div>
     <div class="blog-card reveal">
       <p class="blog-date">2025 · 02</p>
@@ -392,11 +437,8 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
       <p class="blog-excerpt">Coming soon — honest notes from the road.</p>
     </div>
   </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section id="contact" style="max-width:700px;text-align:center;">
+  </div>
+</section> style="max-width:700px;text-align:center;">
   <p class="section-label reveal">Contact</p>
   <h2 class="section-title reveal">Let's Create Something</h2>
   <p class="reveal" style="color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:8px;">Have a project in mind? An idea? Or just want to say hello — write to me. I read everything.</p>
