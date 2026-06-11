@@ -192,9 +192,18 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 .reveal { opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s; }
 .reveal.visible { opacity:1;transform:translateY(0); }
 
+.burger { display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200; }
+.burger span { display:block;width:24px;height:2px;background:var(--white);transition:all .3s; }
+.burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity:0; }
+.burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
 @media (max-width:768px) {
   nav { padding:20px; }
-  .nav-links { display:none; }
+  .burger { display:flex; }
+  .nav-links { display:none;position:fixed;inset:0;top:0;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:rgba(5,5,16,.97);z-index:150;backdrop-filter:blur(10px); }
+  .nav-links.open { display:flex; }
+  .nav-links a { font-size:14px;letter-spacing:4px; }
   section { padding:80px 20px; }
   .about-grid { grid-template-columns:1fr;gap:40px; }
   .about-astronaut { font-size:80px; }
@@ -237,12 +246,15 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <nav>
   <a href="#hero" class="nav-logo">WACD<span>.</span>ART</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" class="nav-close">About</a></li>
+    <li><a href="#projects" class="nav-close">Projects</a></li>
+    <li><a href="#services" class="nav-close">Services</a></li>
+    <li><a href="#blog" class="nav-close">Blog</a></li>
+    <li><a href="#contact" class="nav-close">Contact</a></li>
   </ul>
 </nav>
 
@@ -440,7 +452,11 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     </div>
   </div>
   </div>
-</section> style="max-width:700px;text-align:center;">
+</section>
+
+<div class="section-divider"></div>
+
+<section id="contact" style="max-width:700px;text-align:center;">
   <p class="section-label reveal">Contact</p>
   <h2 class="section-title reveal">Let's Create Something</h2>
   <p class="reveal" style="color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:8px;">Have a project in mind? An idea? Or just want to say hello — write to me. I read everything.</p>
@@ -510,6 +526,21 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
     if (res.ok) { this.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }
   } catch(err) { alert('Error sending. Please try again.'); }
+});
+
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.nav-close').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 </script>
 </body>
