@@ -192,18 +192,9 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 .reveal { opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s; }
 .reveal.visible { opacity:1;transform:translateY(0); }
 
-.burger { display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200; }
-.burger span { display:block;width:24px;height:2px;background:var(--white);transition:all .3s; }
-.burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.burger.open span:nth-child(2) { opacity:0; }
-.burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-
 @media (max-width:768px) {
   nav { padding:20px; }
-  .burger { display:flex; }
-  .nav-links { display:none;position:fixed;inset:0;top:0;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:rgba(5,5,16,.97);z-index:150;backdrop-filter:blur(10px); }
-  .nav-links.open { display:flex; }
-  .nav-links a { font-size:14px;letter-spacing:4px; }
+  .nav-links { display:none; }
   section { padding:80px 20px; }
   .about-grid { grid-template-columns:1fr;gap:40px; }
   .about-astronaut { font-size:80px; }
@@ -226,7 +217,12 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <div class="planet"></div>
 <div class="rocket">🚀</div>
-  
+
+<!-- Spaceman выглядывает снизу-справа -->
+<div class="peek-character">
+  <img src="SpacemanCollage.png" alt="WACD.ART spaceman">
+</div>
+
 <!-- Звезда летает в фоне -->
 <div class="bg-star-png">
   <img src="2danimation.png" alt="star">
@@ -241,15 +237,12 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <nav>
   <a href="#hero" class="nav-logo">WACD<span>.</span>ART</a>
-  <button class="burger" id="burger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about" class="nav-close">About</a></li>
-    <li><a href="#projects" class="nav-close">Projects</a></li>
-    <li><a href="#services" class="nav-close">Services</a></li>
-    <li><a href="#blog" class="nav-close">Blog</a></li>
-    <li><a href="#contact" class="nav-close">Contact</a></li>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -295,9 +288,7 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     </div>
   </div>
 </section>
-<div style="text-align:center;margin-top:40px;">
-  <a href="https://buymeacoffee.com/WACD.CARTOONS" target="_blank" rel="noopener" class="btn-outline" style="border-color:rgba(255,94,58,.5);color:#ff6e3a;display:inline-block;">☕ Buy Me a Coffee</a>
-</div>
+
 <div class="section-divider"></div>
 
 <section id="projects">
@@ -411,7 +402,7 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     <img src="Collage.png" alt="WACD.ART collage animation blog" class="blog-collage-img">
   <div class="blog-grid">
     <div class="blog-card reveal" id="post-1">
-      <p class="blog-date">2026 · 06</p>
+      <p class="blog-date">2025 · 01</p>
       <h3 class="blog-title">How I Learned Animation Without a Single Course</h3>
       <p class="blog-excerpt">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives...</p>
       <a class="project-link" style="cursor:pointer;" onclick="document.getElementById('article-1').style.display='block';this.style.display='none';">Read more</a>
@@ -439,8 +430,29 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     </div>
     <div class="blog-card reveal">
       <p class="blog-date">2025 · 03</p>
-      <h3 class="blog-title">We Are Cosmic Dust — what does it really mean?</h3>
-      <p class="blog-excerpt">Coming soon — the philosophy behind the name.</p>
+      <h3 class="blog-title">Why Cosmic Dust? The Story Behind WACD</h3>
+      <p class="blog-excerpt">The idea behind WACD began long before the website itself. Several years ago, I watched the BBC documentary Secrets of the Solar System...</p>
+      <a class="project-link" style="cursor:pointer;" onclick="document.getElementById('article-3').style.display='block';this.style.display='none';">Read more</a>
+      <div id="article-3" style="display:none;margin-top:24px;">
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The idea behind WACD began long before the website itself.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Several years ago, I watched the BBC documentary Secrets of the Solar System. One detail stayed with me long after the film ended: our Solar System was born from a cloud of gas and dust.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Under the force of gravity, tiny particles slowly came together, forming larger and larger structures. Out of chaos appeared planets, asteroids and entire worlds.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">That idea fascinated me.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">We are literally made of the same cosmic material. In the scale of the universe, it feels incredibly lucky to be alive, to imagine, and to create something of our own.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">One morning, the phrase came to me: We Are Cosmic Dust.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Later I realized that its abbreviation — WACD — worked perfectly as well.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">For me, cosmic dust is more than a scientific fact. It is a creative process.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Every animation begins as a collection of unrelated things: images, sketches, ideas, fragments of stories and random thoughts. At first, it looks like chaos. Then, little by little, everything starts coming together.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">A story appears. Movement appears. A new world appears.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">In a way, creating animation is not so different from the formation of a solar system.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Today I create 2D animation, collage animation and motion design, but the idea remains the same: transforming scattered pieces into something meaningful.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Perhaps that is why space continues to appear in my work. Since childhood, I have loved science fiction and dreamed of seeing space with my own eyes. That dream will probably remain a dream. Instead, I learned how to create my own universes.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The character who represents WACD is a collage astronaut in a pink spacesuit with oversized cut-out eyes. She travels through imagined worlds, explores strange places and searches for stories hidden among the stars.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">She is probably the closest thing to me that exists inside my animations.</p>
+        <p style="font-size:13px;line-height:2;color:var(--white);font-style:italic;margin-bottom:16px;">And maybe that is what WACD has always been about:<br>finding order in chaos,<br>finding stories in fragments,<br>and creating worlds from cosmic dust.</p>
+        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">You can explore my animations on <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" style="color:var(--cyan);">YouTube</a>, <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" style="color:var(--cyan);">Instagram</a> and <a href="https://www.behance.net/natamomo" target="_blank" style="color:var(--cyan);">Behance</a>.</p>
+        <p style="font-size:12px;color:var(--pink);margin-top:20px;letter-spacing:2px;">— WACD.ART · June 2026</p>
+      </div>
     </div>
     <div class="blog-card reveal">
       <p class="blog-date">2025 · 04</p>
@@ -523,21 +535,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
     if (res.ok) { this.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }
   } catch(err) { alert('Error sending. Please try again.'); }
-});
-
-const burger = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-});
-document.querySelectorAll('.nav-close').forEach(link => {
-  link.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
-  });
 });
 </script>
 </body>
