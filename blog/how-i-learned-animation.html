@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Learned Animation Without a Single Course — WACD.ART</title>
+<meta name="description" content="A personal story of learning 2D collage animation from scratch using Alight Motion, without any formal courses. By WACD.ART — We Are Cosmic Dust.">
+
+<meta property="og:title" content="How I Learned Animation Without a Single Course — WACD.ART">
+<meta property="og:description" content="A personal story of learning 2D collage animation from scratch using Alight Motion, without any formal courses.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://firstinspace.github.io/firstinspace.github.io/blog/how-i-learned-animation.html">
+<meta property="og:image" content="https://firstinspace.github.io/firstinspace.github.io/SpacemanCollage.png">
+<meta property="article:published_time" content="2026-06-01">
+<meta property="article:author" content="WACD.ART">
+
+<meta name="robots" content="index, follow">
+<meta name="GPTBot" content="index, follow">
+<meta name="PerplexityBot" content="index, follow">
+<meta name="ClaudeBot" content="index, follow">
+<meta name="Google-Extended" content="index, follow">
+
+<link rel="canonical" href="https://firstinspace.github.io/firstinspace.github.io/blog/how-i-learned-animation.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How I Learned Animation Without a Single Course",
+  "url": "https://firstinspace.github.io/firstinspace.github.io/blog/how-i-learned-animation.html",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-29",
+  "author": { "@type": "Person", "name": "WACD.ART", "url": "https://firstinspace.github.io/firstinspace.github.io/" },
+  "publisher": { "@type": "Organization", "name": "WACD.ART", "url": "https://firstinspace.github.io/firstinspace.github.io/" },
+  "description": "A personal story of learning 2D animation from scratch using Alight Motion, without any formal courses.",
+  "keywords": ["2D animation", "self-taught animation", "Alight Motion", "learn animation", "collage animation", "motion art"],
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://firstinspace.github.io/firstinspace.github.io/blog/how-i-learned-animation.html" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78; --cyan: #00f5d4; --purple: #7b2fff;
+  --deep: #050510; --white: #f0eeff; --gray: #8888aa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.nebula { position:fixed;border-radius:50%;filter:blur(80px);opacity:0.1;pointer-events:none;z-index:0; }
+.nebula-1 { width:500px;height:500px;background:var(--purple);top:-150px;left:-100px; }
+.nebula-2 { width:350px;height:350px;background:var(--pink);bottom:-80px;right:-80px; }
+
+/* NAV */
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.98),transparent); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-links { display:flex;gap:32px;align-items:center; }
+.nav-links a { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s;position:relative; }
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--pink);transform:scaleX(0);transition:transform .3s; }
+.nav-links a:hover { color:var(--white); }
+.nav-links a:hover::after { transform:scaleX(1); }
+
+/* ARTICLE */
+.article-wrap { position:relative;z-index:1;max-width:760px;margin:0 auto;padding:140px 40px 80px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   МЕСТО ПОД КАРТИНКУ — ШАПКА СТАТЬИ
+   ───────────────────────────────────────────────────────────────
+   Когда будет готова картинка для этой статьи:
+   1. Положи файл в папку:  blog/images/
+   2. Назови файл:          hero-how-i-learned.jpg
+      (рекомендуемый размер: 1200×600px или любой широкий формат)
+   3. Раскомментируй блок ниже — убери  /*  и  */  вокруг него
+   ═══════════════════════════════════════════════════════════════ */
+/*
+.article-hero-img {
+  display:block;
+  width:100%;
+  max-height:420px;
+  object-fit:cover;
+  margin-bottom:48px;
+  border:1px solid rgba(123,47,255,.3);
+  filter:brightness(.9);
+}
+*/
+/* РАСКОММЕНТИРОВАННЫЙ ВАРИАНТ БУДЕТ ВЫГЛЯДЕТЬ ТАК:
+<img src="images/hero-how-i-learned.jpg"
+     alt="How I Learned Animation Without a Single Course — WACD.ART"
+     class="article-hero-img">
+*/
+
+.article-meta { margin-bottom:40px; }
+.article-category { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:14px; }
+.article-title { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(24px,4.5vw,44px);line-height:1.15;margin-bottom:20px; }
+.article-byline { font-size:11px;letter-spacing:3px;color:var(--gray); }
+.article-byline span { color:var(--cyan); }
+
+.article-divider { width:60px;height:2px;background:linear-gradient(to right,var(--pink),var(--purple));margin:36px 0; }
+
+/* ═══════════════════════════════════════════════════════════════
+   МЕСТО ПОД АУДИО — МУЗЫКА К СТАТЬЕ
+   ───────────────────────────────────────────────────────────────
+   Когда будет готов аудио-файл для этой статьи:
+   1. Положи файл в папку:  blog/audio/
+   2. Назови файл:          mood-how-i-learned.mp3
+   3. Раскомментируй блок .audio-player ниже
+   ═══════════════════════════════════════════════════════════════ */
+.audio-player { display:none; /* УБЕРИ display:none КОГДА ДОБАВИШЬ ФАЙЛ */
+  background:rgba(123,47,255,.1);border:1px solid rgba(123,47,255,.3);
+  padding:20px 24px;margin-bottom:40px;
+  display:flex;align-items:center;gap:16px;
+}
+/* ПОСЛЕ РАСКОММЕНТИРОВАНИЯ В HTML БУДЕТ:
+<div class="audio-player">
+  <span style="color:var(--pink);font-size:18px;">♪</span>
+  <div style="flex:1">
+    <p style="font-size:10px;letter-spacing:3px;color:var(--gray);margin-bottom:6px;">MOOD TRACK FOR THIS ARTICLE</p>
+    <audio controls style="width:100%;accent-color:var(--pink);">
+      <source src="audio/mood-how-i-learned.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+*/
+
+.article-body p { font-size:15px;line-height:2.1;color:var(--gray);margin-bottom:24px; }
+.article-body strong { color:var(--white); }
+.article-body em { color:var(--white);font-style:italic; }
+
+.article-quote { border-left:2px solid var(--pink);padding:20px 32px;margin:36px 0;background:rgba(255,45,120,.04); }
+.article-quote p { color:var(--white);font-style:italic;margin:0;line-height:1.9; }
+
+.article-signature { font-size:12px;color:var(--pink);letter-spacing:2px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,45,120,.2); }
+
+/* CTA */
+.article-cta { margin-top:72px;padding:48px;border:1px solid rgba(123,47,255,.3);background:rgba(10,10,46,.5);text-align:center;position:relative;overflow:hidden; }
+.article-cta::before { content:'✦';position:absolute;font-size:160px;color:rgba(123,47,255,.04);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none; }
+.cta-label { font-size:10px;letter-spacing:5px;color:var(--pink);text-transform:uppercase;margin-bottom:12px; }
+.cta-title { font-family:'Orbitron',monospace;font-size:clamp(18px,3vw,28px);margin-bottom:12px;line-height:1.3; }
+.cta-desc { font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:32px;max-width:420px;margin-left:auto;margin-right:auto; }
+.cta-buttons { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
+.btn-primary { background:var(--pink);color:white;padding:15px 32px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);display:inline-block; }
+.btn-primary:hover { background:var(--white);color:var(--pink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,45,120,.4); }
+.btn-coffee { background:transparent;color:var(--cyan);padding:15px 32px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cyan);transition:all .3s;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);display:inline-block; }
+.btn-coffee:hover { background:rgba(0,245,212,.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,245,212,.2); }
+
+/* RELATED */
+.related-section { margin-top:64px;padding-top:40px;border-top:1px solid rgba(123,47,255,.25); }
+.related-label { font-size:10px;letter-spacing:5px;color:var(--gray);text-transform:uppercase;margin-bottom:24px; }
+.related-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.related-card { padding:24px;border:1px solid rgba(123,47,255,.25);text-decoration:none;transition:all .3s;display:block; }
+.related-card:hover { border-color:var(--cyan);background:rgba(0,245,212,.04); }
+.related-date { font-size:10px;letter-spacing:3px;color:var(--pink);margin-bottom:8px; }
+.related-title { font-family:'Unbounded',sans-serif;font-size:13px;color:var(--white);line-height:1.5; }
+
+footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:40px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px;margin-top:8px; }
+
+@media (max-width:768px) {
+  nav { padding:20px; }
+  .nav-links { gap:20px; }
+  .article-wrap { padding:100px 20px 60px; }
+  .article-quote { padding:16px 20px; }
+  .article-cta { padding:32px 20px; }
+  .related-grid { grid-template-columns:1fr; }
+  footer { padding:40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">WACD<span>.</span>ART</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<article class="article-wrap" itemscope itemtype="https://schema.org/BlogPosting">
+  <meta itemprop="datePublished" content="2026-06-01">
+  <meta itemprop="dateModified" content="2026-06-29">
+  <meta itemprop="author" content="WACD.ART">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       КАРТИНКА-ШАПКА СТАТЬИ
+       Когда будет готова — положи файл blog/images/hero-how-i-learned.jpg
+       и раскомментируй строку ниже:
+  <img src="images/hero-how-i-learned.jpg" alt="How I Learned Animation Without a Single Course — WACD.ART" class="article-hero-img" itemprop="image">
+       ═══════════════════════════════════════════════════════════ -->
+
+  <div class="article-meta">
+    <p class="article-category">Personal Story · Animation</p>
+    <h1 class="article-title" itemprop="headline">How I Learned Animation Without a Single Course</h1>
+    <p class="article-byline">By <span>WACD.ART</span> · June 2026</p>
+  </div>
+
+  <div class="article-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       АУДИО — МУЗЫКА К СТАТЬЕ
+       Когда будет готов файл — положи blog/audio/mood-how-i-learned.mp3
+       и раскомментируй блок ниже:
+
+  <div class="audio-player" style="display:flex;">
+    <span style="color:var(--pink);font-size:20px;flex-shrink:0;">♪</span>
+    <div style="flex:1;">
+      <p style="font-size:10px;letter-spacing:3px;color:var(--gray);margin-bottom:8px;text-transform:uppercase;">Mood track for this article</p>
+      <audio controls style="width:100%;accent-color:var(--pink);">
+        <source src="audio/mood-how-i-learned.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+       ═══════════════════════════════════════════════════════════ -->
+
+  <div class="article-body" itemprop="articleBody">
+
+    <p>I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of <em>Desperate Housewives</em>. I was fascinated by how still images could tell a story through movement. I wanted to create something similar myself.</p>
+
+    <p>My first animation was a simple Halloween project made with Photoshop and PowerPoint. It was far from perfect, but it was enough to make me curious about animation.</p>
+
+    <p>Later, a friend on Instagram introduced me to <strong>Alight Motion</strong>. It became my main tool for exploring 2D animation, collage videos and visual storytelling. I spent countless hours experimenting, searching for answers, and learning through trial and error.</p>
+
+    <p>Like many beginners, I started by recreating other people's work. It helped me understand timing, movement and technique. But after a while I realized something was missing.</p>
+
+    <div class="article-quote">
+      <p>The animations looked fine, yet they felt empty.</p>
+    </div>
+
+    <p>There were no personal ideas in them. No emotions. No point of view. I was learning how to animate, but I wasn't creating anything that felt like mine. That was the first time I seriously thought about giving up.</p>
+
+    <p>Then a request came in for a birthday animation. Soon there was another project, and then another. Real people trusted me with their stories, and animation stopped being just an experiment.</p>
+
+    <p>One of the first projects I was truly proud of was an animation for an organization helping homeless cats. Later I created work for a women's business forum and other clients. With every project I learned a little more about storytelling through motion.</p>
+
+    <p>The biggest change happened when I stopped looking for someone else's style and started looking for my own.</p>
+
+    <p>Today my work combines <strong>2D animation, collage animation and motion design</strong>. Cosmic imagery, surreal compositions and visual metaphors appear again and again in my projects. They became part of a language that feels natural to me.</p>
+
+    <p>I still consider myself self-taught. Every project teaches me something new.</p>
+
+    <p>Looking back, the hardest part was not learning the software. The hardest part was finding my own voice.</p>
+
+    <div class="article-quote">
+      <p>In a world full of templates, trends and endless references, creating something personal is still the most rewarding part of animation.</p>
+    </div>
+
+    <p class="article-signature">— WACD.ART · June 2026</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <p class="cta-label">Work with me</p>
+    <h2 class="cta-title">Need animation for your project?</h2>
+    <p class="cta-desc">Collage animation, 2D character animation, motion design — for brands, social media and creative projects.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-primary">Order Animation ✦</a>
+      <a href="https://buymeacoffee.com/wacd.cartoons" target="_blank" rel="noopener" class="btn-coffee">☕ Buy Me a Coffee</a>
+    </div>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <div class="related-section">
+    <p class="related-label">More from the blog</p>
+    <div class="related-grid">
+      <a href="why-cosmic-dust.html" class="related-card">
+        <p class="related-date">June 2026</p>
+        <p class="related-title">Why Cosmic Dust? The Story Behind WACD</p>
+      </a>
+      <a href="index.html" class="related-card">
+        <p class="related-date">All articles</p>
+        <p class="related-title">← Back to Cosmic Notes</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist</p>
+</footer>
+
+</body>
+</html>
