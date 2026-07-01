@@ -5,9 +5,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WACD.ART — 2D Animator · Motion Artist · Collage Animation</title>
 <meta name="description" content="2D animator and motion artist. Collage animation, vector animation, character animation for brands and creative projects. From cosmic dust and imagination.">
-<meta property="og:title" content="WACD.ART — 2D Animator · Motion Artist">
-<meta property="og:description" content="Collage animation, 2D vector animation, character animation for brands, social media and creative projects.">
+
+<!-- ═══════════════════════════════════════════════════════════
+     GEO FIX #1 — Open Graph + Twitter Cards
+     Нужно: Gemini и ChatGPT читают og-теги при краулинге страницы.
+     Без них сайт выглядит "пустым" для AI-ботов.
+     ═══════════════════════════════════════════════════════════ -->
+<meta property="og:title" content="WACD.ART — 2D Animator · Motion Artist · Collage Animation">
+<meta property="og:description" content="Collage animation, 2D vector animation, character animation for brands, social media and creative projects. We Are Cosmic Dust.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wacd.art/">
+<meta property="og:image" content="https://wacd.art/SpacemanCollage.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WACD.ART — 2D Animator · Motion Artist">
+<meta name="twitter:description" content="Collage animation, 2D animation and motion art for brands and creative projects.">
+
+<!-- ═══════════════════════════════════════════════════════════
+     GEO FIX #2 — Разрешаем AI-ботам индексировать сайт
+     GPTBot = ChatGPT, Google-Extended = Gemini AI Overviews,
+     PerplexityBot = Perplexity, ClaudeBot = Claude
+     ═══════════════════════════════════════════════════════════ -->
 <meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="GPTBot" content="index, follow">
+<meta name="PerplexityBot" content="index, follow">
+<meta name="ClaudeBot" content="index, follow">
+<meta name="Google-Extended" content="index, follow">
+
+<!-- ═══════════════════════════════════════════════════════════
+     GEO FIX #3 — Canonical URL
+     Без этого AI-боты не понимают, какой URL "главный",
+     и могут не индексировать сайт вообще.
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="canonical" href="https://wacd.art/">
+
+<!-- ═══════════════════════════════════════════════════════════
+     GEO FIX #4 — JSON-LD Schema разметка
+     Это ГЛАВНОЕ для попадания в AI-выдачу.
+     Gemini, Perplexity и ChatGPT используют structured data
+     чтобы понять: кто автор, что за сайт, какие услуги.
+     ═══════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebSite",
+      "@id": "https://wacd.art/#website",
+      "url": "https://wacd.art/",
+      "name": "WACD.ART",
+      "description": "2D animator and motion artist. Collage animation, vector animation, character animation. We Are Cosmic Dust.",
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://wacd.art/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://wacd.art/#author",
+      "name": "WACD.ART",
+      "url": "https://wacd.art/",
+      "sameAs": [
+        "https://www.youtube.com/@wacd.cartoons",
+        "https://www.instagram.com/wacd.art_cartoons/",
+        "https://www.behance.net/natamomo"
+      ],
+      "jobTitle": "2D Animator and Motion Artist",
+      "description": "Self-taught 2D animator and motion artist creating collage animation, vector animation and character animation for brands and creative projects.",
+      "knowsAbout": ["2D Animation", "Collage Animation", "Motion Design", "Alight Motion", "Character Animation", "Video Production"]
+    },
+
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://wacd.art/#business",
+      "name": "WACD.ART",
+      "url": "https://wacd.art/",
+      "description": "2D animation and collage video studio for brands, social media and creative projects.",
+      "founder": { "@id": "https://wacd.art/#author" },
+      "sameAs": [
+        "https://www.youtube.com/@wacd.cartoons",
+        "https://www.instagram.com/wacd.art_cartoons/",
+        "https://www.behance.net/natamomo"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Animation Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Collage Animation",
+              "description": "Surreal videos made from photos, textures and art objects. For brands with character — astrology, psychology, lifestyle, fashion."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "2D Vector Animation",
+              "description": "Clean lines, characters, scenes. For ads, social media and explainer videos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "2D Character Animation",
+              "description": "Hand-drawn stories with personality for psychologists, coaches, personal brands."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Animated Product Cards",
+              "description": "Animated product cards for marketplaces and social media — Wildberries, Ozon, Instagram."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI-Generated Images and Video",
+              "description": "Fast visual content for social media, advertising and presentations using AI generation tools."
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://wacd.art/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is collage animation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Collage animation is a style where photos, textures, art objects and video are combined into surreal moving visuals. It creates a unique aesthetic that stands out on social media and works well for lifestyle, psychology, astrology and personal brands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of animation does WACD.ART create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WACD.ART creates three styles: collage animation, 2D vector animation with clean characters and scenes, and 2D character animation with hand-drawn personality. Also animated product cards and AI-generated visual content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I order animation for my brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fill out the contact form on wacd.art or write directly. Describe your project, the format you need and your timeline. Response within 1-2 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools does WACD.ART use for animation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WACD.ART works primarily in Alight Motion for 2D and collage animation. For AI-generated content the latest image and video generation tools are used."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can WACD.ART create animation for Instagram, TikTok and YouTube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Animated content is created and optimised for all major platforms — Reels, TikTok videos, YouTube Shorts, stories and feed posts."
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "Blog",
+      "@id": "https://wacd.art/#blog",
+      "name": "WACD.ART — Cosmic Notes",
+      "description": "Blog about 2D animation, collage animation, Alight Motion and building a creative brand.",
+      "url": "https://wacd.art/#blog",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "How I Learned Animation Without a Single Course",
+          "url": "https://wacd.art/blog/how-i-learned-animation.html",
+          "datePublished": "2026-06-01",
+          "dateModified": "2026-06-29",
+          "author": { "@id": "https://wacd.art/#author" },
+          "description": "A personal story of learning 2D animation from scratch using Alight Motion, without any formal courses.",
+          "keywords": ["2D animation", "self-taught animation", "Alight Motion", "learn animation", "collage animation"]
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Why Cosmic Dust? The Story Behind WACD",
+          "url": "https://wacd.art/blog/why-cosmic-dust.html",
+          "datePublished": "2026-06-20",
+          "dateModified": "2026-06-29",
+          "author": { "@id": "https://wacd.art/#author" },
+          "description": "The origin story of WACD — We Are Cosmic Dust — and how a BBC documentary about the solar system became the foundation of a creative brand.",
+          "keywords": ["WACD", "cosmic dust", "creative brand", "animation studio", "collage art"]
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -139,7 +352,6 @@ section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin
 .service-desc { font-size:13px;line-height:1.8;color:var(--gray); }
 .service-badge { display:inline-block;margin-bottom:12px;font-size:9px;letter-spacing:3px;color:var(--pink);border:1px solid rgba(255,45,120,.3);padding:3px 10px;text-transform:uppercase; }
 
-/* Peek character */
 .peek-character { position:fixed;bottom:0;right:40px;width:160px;z-index:50;pointer-events:none;animation:peekUp 12s 4s infinite ease-in-out; }
 .peek-character img { width:100%;display:block; }
 @keyframes peekUp {
@@ -150,7 +362,6 @@ section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin
   100% { transform:translateY(100%); }
 }
 
-/* Floating star PNG */
 .bg-star-png { position:fixed;width:80px;top:60%;left:5%;z-index:0;pointer-events:none;opacity:0.7;animation:floatStar 7s infinite alternate ease-in-out;mix-blend-mode:screen; }
 .bg-star-png img { width:100%;mix-blend-mode:screen; }
 
@@ -162,13 +373,19 @@ section { position:relative;z-index:1;padding:120px 40px;max-width:1100px;margin
 
 .blog-collage-img { display:block;width:200px;margin:0 auto 40px;mix-blend-mode:screen;animation:floatStar 5s infinite alternate ease-in-out;filter:drop-shadow(0 0 20px rgba(255,45,120,.3)); }
 
+/* ═══════════════════════════════════════════════════════════
+   GEO FIX #5 — Блог: статьи теперь ведут на отдельные страницы
+   display:none прячет контент от AI-ботов.
+   Реальные ссылки — единственный способ индексации статей.
+   ═══════════════════════════════════════════════════════════ */
 .blog-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
-.blog-card { border-top:1px solid rgba(255,45,120,.3);padding:32px 0;transition:all .3s;cursor:pointer; }
+.blog-card { border-top:1px solid rgba(255,45,120,.3);padding:32px 0;transition:all .3s; }
 .blog-card:hover { border-color:var(--pink); }
 .blog-date { font-size:10px;letter-spacing:4px;color:var(--pink);margin-bottom:12px; }
 .blog-title { font-family:'Unbounded',sans-serif;font-size:16px;font-weight:400;line-height:1.5;margin-bottom:12px;color:var(--white);transition:color .3s; }
 .blog-card:hover .blog-title { color:var(--cyan); }
-.blog-excerpt { font-size:13px;line-height:1.8;color:var(--gray); }
+.blog-excerpt { font-size:13px;line-height:1.8;color:var(--gray);margin-bottom:16px; }
+.blog-card a.project-link { text-decoration:none; }
 
 .contact-form { display:flex;flex-direction:column;gap:16px;margin-top:40px;text-align:left; }
 .form-group { display:flex;flex-direction:column;gap:8px; }
@@ -197,7 +414,6 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
   .nav-links { display:none; }
   section { padding:80px 20px; }
   .about-grid { grid-template-columns:1fr;gap:40px; }
-  .about-astronaut { font-size:80px; }
   .blog-grid { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
   .planet { width:70px;height:70px;right:4%;top:12%; }
@@ -218,14 +434,12 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 <div class="planet"></div>
 <div class="rocket">🚀</div>
 
-<!-- Spaceman выглядывает снизу-справа -->
 <div class="peek-character">
-  <img src="SpacemanCollage.png" alt="WACD.ART spaceman">
+  <img src="SpacemanCollage.png" alt="WACD.ART spaceman collage animator character">
 </div>
 
-<!-- Звезда летает в фоне -->
 <div class="bg-star-png">
-  <img src="2danimation.png" alt="star">
+  <img src="2danimation.png" alt="2D animation WACD.ART">
 </div>
 <div class="asteroid" style="top:30%;right:-40px;--dur:22s;--delay:5s;--tx:-110vw">🪨</div>
 <div class="asteroid" style="top:65%;right:-40px;--dur:30s;--delay:14s;--tx:-110vw;font-size:14px">🪨</div>
@@ -241,7 +455,7 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#blog">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -268,8 +482,8 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
   <div class="about-grid">
     <div class="about-visual reveal">
       <video class="about-astronaut" autoplay loop muted playsinline>
-      <source src="Video1.mp4" type="video/mp4">
-    </video>
+        <source src="Video1.mp4" type="video/mp4">
+      </video>
       <div class="about-glow"></div>
     </div>
     <div class="about-text reveal">
@@ -300,28 +514,28 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
       <p class="project-type">Animated Series</p>
       <h3 class="project-name">My Inner Thoughts</h3>
       <p class="project-desc">A series of animated short films — inner monologues turned into cosmic visuals. Episodes 1–5 released.</p>
-      <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" class="project-link">Watch on YouTube</a>
+      <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" rel="noopener" class="project-link">Watch on YouTube</a>
     </div>
     <div class="project-card reveal">
       <div class="project-icon">🌌</div>
       <p class="project-type">Collage Animation</p>
       <h3 class="project-name">WACD Cartoons</h3>
       <p class="project-desc">Cosmic collage animations built in Alight Motion. Where space, dreams and everyday life collide.</p>
-      <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" class="project-link">View on Instagram</a>
+      <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" rel="noopener" class="project-link">View on Instagram</a>
     </div>
     <div class="project-card reveal">
       <div class="project-icon">✦</div>
       <p class="project-type">Portfolio</p>
       <h3 class="project-name">Behance</h3>
       <p class="project-desc">2D animations, collage videos and motion art — surreal, cosmic, and deeply personal visual stories.</p>
-      <a href="https://www.behance.net/natamomo" target="_blank" class="project-link">See on Behance</a>
+      <a href="https://www.behance.net/natamomo" target="_blank" rel="noopener" class="project-link">See on Behance</a>
     </div>
   </div>
   <div class="socials-row reveal">
-    <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" class="social-link">▶ YouTube · RU · EN</a>
-    <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" class="social-link">◈ Instagram</a>
-    <a href="#" target="_blank" class="social-link">✈ Telegram</a>
-    <a href="https://www.behance.net/natamomo" target="_blank" class="social-link">✦ Behance</a>
+    <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" rel="noopener" class="social-link">▶ YouTube · RU · EN</a>
+    <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" rel="noopener" class="social-link">◈ Instagram</a>
+    <a href="#" class="social-link">✈ Telegram</a>
+    <a href="https://www.behance.net/natamomo" target="_blank" rel="noopener" class="social-link">✦ Behance</a>
   </div>
 </section>
 
@@ -366,29 +580,44 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
 
 <div class="section-divider"></div>
 
+<!-- ═══════════════════════════════════════════════════════════
+     GEO FIX #6 — FAQ в реальном HTML, не в display:none
+     AI-боты читают FAQPage из schema.json выше,
+     но также сканируют видимый HTML. Текст должен быть открытым.
+     ═══════════════════════════════════════════════════════════ -->
 <section id="faq" style="max-width:800px;">
   <p class="section-label reveal">FAQ</p>
   <h2 class="section-title reveal">Common Questions</h2>
-  <div class="faq-list">
-    <div class="faq-item reveal">
-      <h3 class="faq-q">What is collage animation?</h3>
-      <p class="faq-a">Collage animation is a style where photos, textures, art objects and video are combined into surreal moving visuals. It creates a unique aesthetic that stands out on social media and works well for lifestyle, psychology, astrology and personal brands.</p>
+  <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 class="faq-q" itemprop="name">What is collage animation?</h3>
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Collage animation is a style where photos, textures, art objects and video are combined into surreal moving visuals. It creates a unique aesthetic that stands out on social media and works well for lifestyle, psychology, astrology and personal brands.</p>
+      </div>
     </div>
-    <div class="faq-item reveal">
-      <h3 class="faq-q">What types of animation do you create?</h3>
-      <p class="faq-a">I create three styles: collage animation, 2D vector animation with clean characters and scenes, and 2D character animation with hand-drawn personality. I also produce animated product cards and AI-generated visual content.</p>
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 class="faq-q" itemprop="name">What types of animation do you create?</h3>
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">I create three styles: collage animation, 2D vector animation with clean characters and scenes, and 2D character animation with hand-drawn personality. I also produce animated product cards and AI-generated visual content.</p>
+      </div>
     </div>
-    <div class="faq-item reveal">
-      <h3 class="faq-q">How do I order animation for my brand?</h3>
-      <p class="faq-a">Fill out the contact form on this page or write to me directly. Tell me about your project, the format you need and your timeline. I respond within 1–2 days.</p>
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 class="faq-q" itemprop="name">How do I order animation for my brand?</h3>
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Fill out the contact form on this page or write to me directly. Tell me about your project, the format you need and your timeline. I respond within 1–2 days.</p>
+      </div>
     </div>
-    <div class="faq-item reveal">
-      <h3 class="faq-q">What tools do you use?</h3>
-      <p class="faq-a">I work primarily in Alight Motion for 2D and collage animation. For AI-generated content I use the latest image and video generation tools.</p>
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 class="faq-q" itemprop="name">What tools do you use?</h3>
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">I work primarily in Alight Motion for 2D and collage animation. For AI-generated content I use the latest image and video generation tools.</p>
+      </div>
     </div>
-    <div class="faq-item reveal">
-      <h3 class="faq-q">Can you create animation for social media — Instagram, TikTok, YouTube?</h3>
-      <p class="faq-a">Yes. I create animated content optimised for all major platforms — Reels, TikTok videos, YouTube Shorts, stories and feed posts.</p>
+    <div class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 class="faq-q" itemprop="name">Can you create animation for social media — Instagram, TikTok, YouTube?</h3>
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">Yes. I create animated content optimised for all major platforms — Reels, TikTok videos, YouTube Shorts, stories and feed posts.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -399,67 +628,37 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
   <p class="section-label reveal">Blog</p>
   <h2 class="section-title reveal">Cosmic Notes</h2>
   <div style="position:relative;">
-    <img src="Collage.png" alt="WACD.ART collage animation blog" class="blog-collage-img">
-  <div class="blog-grid">
-    <div class="blog-card reveal" id="post-1">
-      <p class="blog-date">2026 · 06</p>
-      <h3 class="blog-title">How I Learned Animation Without a Single Course</h3>
-      <p class="blog-excerpt">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives...</p>
-      <a class="project-link" style="cursor:pointer;" onclick="document.getElementById('article-1').style.display='block';this.style.display='none';">Read more</a>
-      <div id="article-1" style="display:none;margin-top:24px;">
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives. I was fascinated by how still images could tell a story through movement. I wanted to create something similar myself.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">My first animation was a simple Halloween project made with Photoshop and PowerPoint. It was far from perfect, but it was enough to make me curious about animation.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Later, a friend on Instagram introduced me to Alight Motion. It became my main tool for exploring 2D animation, collage videos and visual storytelling. I spent countless hours experimenting, searching for answers, and learning through trial and error.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Like many beginners, I started by recreating other people's work. It helped me understand timing, movement and technique. But after a while I realized something was missing.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">The animations looked fine, yet they felt empty.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">There were no personal ideas in them. No emotions. No point of view. I was learning how to animate, but I wasn't creating anything that felt like mine. That was the first time I seriously thought about giving up.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Then a request came in for a birthday animation. Soon there was another project, and then another. Real people trusted me with their stories, and animation stopped being just an experiment.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">One of the first projects I was truly proud of was an animation for an organization helping homeless cats. Later I created work for a women's business forum and other clients. With every project I learned a little more about storytelling through motion.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The biggest change happened when I stopped looking for someone else's style and started looking for my own.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Today my work combines 2D animation, collage animation and motion design. Cosmic imagery, surreal compositions and visual metaphors appear again and again in my projects. They became part of a language that feels natural to me.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">I still consider myself self-taught. Every project teaches me something new.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Looking back, the hardest part was not learning the software. The hardest part was finding my own voice.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);font-style:italic;">In a world full of templates, trends and endless references, creating something personal is still the most rewarding part of animation.</p>
-        <p style="font-size:12px;color:var(--pink);margin-top:20px;letter-spacing:2px;">— WACD.ART</p>
+    <img src="Collage.png" alt="WACD.ART collage animation" class="blog-collage-img">
+    <!-- ═══════════════════════════════════════════════════════════
+         GEO FIX #7 — Статьи как реальные HTML-ссылки
+         Раньше текст статей был в display:none — AI не мог их читать.
+         Теперь каждая статья = отдельный HTML-файл в папке /blog/
+         Ссылки вида /blog/название-статьи.html
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <p class="blog-date">2026 · 06</p>
+        <h3 class="blog-title">How I Learned Animation Without a Single Course</h3>
+        <p class="blog-excerpt">I first tried animation in 2021. At the time, I was creating PowerPoint presentations when I came across the opening sequence of Desperate Housewives...</p>
+        <a href="blog/how-i-learned-animation.html" class="project-link">Read more</a>
+      </div>
+      <div class="blog-card reveal">
+        <p class="blog-date">2025 · 02</p>
+        <h3 class="blog-title">Alight Motion: what I actually use and why</h3>
+        <p class="blog-excerpt">Coming soon — a practical breakdown of my mobile animation toolkit.</p>
+      </div>
+      <div class="blog-card reveal">
+        <p class="blog-date">2026 · 06</p>
+        <h3 class="blog-title">Why Cosmic Dust? The Story Behind WACD</h3>
+        <p class="blog-excerpt">The idea behind WACD began long before the website itself. Several years ago, I watched the BBC documentary Secrets of the Solar System...</p>
+        <a href="blog/why-cosmic-dust.html" class="project-link">Read more</a>
+      </div>
+      <div class="blog-card reveal">
+        <p class="blog-date">2025 · 04</p>
+        <h3 class="blog-title">Building a creative brand with zero budget</h3>
+        <p class="blog-excerpt">Coming soon — honest notes from the road.</p>
       </div>
     </div>
-    <div class="blog-card reveal">
-      <p class="blog-date">2025 · 02</p>
-      <h3 class="blog-title">Alight Motion: what I actually use and why</h3>
-      <p class="blog-excerpt">Coming soon — a practical breakdown of my mobile animation toolkit.</p>
-    </div>
-    <div class="blog-card reveal">
-      <p class="blog-date">2026 · 06</p>
-      <h3 class="blog-title">Why Cosmic Dust? The Story Behind WACD</h3>
-      <p class="blog-excerpt">The idea behind WACD began long before the website itself. Several years ago, I watched the BBC documentary Secrets of the Solar System...</p>
-      <a class="project-link" style="cursor:pointer;" onclick="document.getElementById('article-3').style.display='block';this.style.display='none';">Read more</a>
-      <div id="article-3" style="display:none;margin-top:24px;">
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The idea behind WACD began long before the website itself.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Several years ago, I watched the BBC documentary Secrets of the Solar System. One detail stayed with me long after the film ended: our Solar System was born from a cloud of gas and dust.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Under the force of gravity, tiny particles slowly came together, forming larger and larger structures. Out of chaos appeared planets, asteroids and entire worlds.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">That idea fascinated me.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">We are literally made of the same cosmic material. In the scale of the universe, it feels incredibly lucky to be alive, to imagine, and to create something of our own.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">One morning, the phrase came to me: We Are Cosmic Dust.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Later I realized that its abbreviation — WACD — worked perfectly as well.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">For me, cosmic dust is more than a scientific fact. It is a creative process.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Every animation begins as a collection of unrelated things: images, sketches, ideas, fragments of stories and random thoughts. At first, it looks like chaos. Then, little by little, everything starts coming together.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);margin-bottom:16px;font-style:italic;">A story appears. Movement appears. A new world appears.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">In a way, creating animation is not so different from the formation of a solar system.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Today I create 2D animation, collage animation and motion design, but the idea remains the same: transforming scattered pieces into something meaningful.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">Perhaps that is why space continues to appear in my work. Since childhood, I have loved science fiction and dreamed of seeing space with my own eyes. That dream will probably remain a dream. Instead, I learned how to create my own universes.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">The character who represents WACD is a collage astronaut in a pink spacesuit with oversized cut-out eyes. She travels through imagined worlds, explores strange places and searches for stories hidden among the stars.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">She is probably the closest thing to me that exists inside my animations.</p>
-        <p style="font-size:13px;line-height:2;color:var(--white);font-style:italic;margin-bottom:16px;">And maybe that is what WACD has always been about:<br>finding order in chaos,<br>finding stories in fragments,<br>and creating worlds from cosmic dust.</p>
-        <p style="font-size:13px;line-height:2;color:var(--gray);margin-bottom:16px;">You can explore my animations on <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" style="color:var(--cyan);">YouTube</a>, <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" style="color:var(--cyan);">Instagram</a> and <a href="https://www.behance.net/natamomo" target="_blank" style="color:var(--cyan);">Behance</a>.</p>
-        <p style="font-size:12px;color:var(--pink);margin-top:20px;letter-spacing:2px;">— WACD.ART · June 2026</p>
-      </div>
-    </div>
-    <div class="blog-card reveal">
-      <p class="blog-date">2025 · 04</p>
-      <h3 class="blog-title">Building a creative brand with zero budget</h3>
-      <p class="blog-excerpt">Coming soon — honest notes from the road.</p>
-    </div>
-  </div>
   </div>
 </section>
 
@@ -496,10 +695,10 @@ footer { position:relative;z-index:1;padding:60px 40px 40px;text-align:center;bo
   <div class="footer-logo">WACD<span>.</span>ART</div>
   <p class="footer-tagline">· WE ARE COSMIC DUST ·</p>
   <div class="socials-row" style="justify-content:center;margin-bottom:32px;">
-    <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" class="social-link">▶ YouTube</a>
-    <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" class="social-link">◈ Instagram</a>
-    <a href="#" target="_blank" class="social-link">✈ Telegram</a>
-    <a href="https://www.behance.net/natamomo" target="_blank" class="social-link">✦ Behance</a>
+    <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" rel="noopener" class="social-link">▶ YouTube</a>
+    <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" rel="noopener" class="social-link">◈ Instagram</a>
+    <a href="#" class="social-link">✈ Telegram</a>
+    <a href="https://www.behance.net/natamomo" target="_blank" rel="noopener" class="social-link">✦ Behance</a>
   </div>
   <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist · All rights reserved</p>
 </footer>
