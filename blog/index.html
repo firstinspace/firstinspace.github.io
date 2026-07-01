@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmic Notes — Blog · WACD.ART</title>
+<meta name="description" content="Blog about 2D animation, collage animation, Alight Motion and building a creative brand from scratch. By WACD.ART — We Are Cosmic Dust.">
+<meta property="og:title" content="Cosmic Notes — Blog · WACD.ART">
+<meta property="og:description" content="Blog about 2D animation, collage animation, Alight Motion and building a creative brand from scratch.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wacd.art/blog/">
+<meta property="og:image" content="https://wacd.art/SpacemanCollage.png">
+<link rel="canonical" href="https://wacd.art/blog/">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Cosmic Notes — WACD.ART Blog",
+  "url": "https://wacd.art/blog/",
+  "description": "Blog about 2D animation, collage animation, Alight Motion and building a creative brand.",
+  "author": {
+    "@type": "Person",
+    "name": "WACD.ART",
+    "url": "https://wacd.art"
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How I Learned Animation Without a Single Course",
+      "url": "https://wacd.art/blog/how-i-learned-animation.html",
+      "datePublished": "2026-06-01",
+      "author": { "@type": "Person", "name": "WACD.ART" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Why Cosmic Dust? The Story Behind WACD",
+      "url": "https://wacd.art/blog/why-cosmic-dust.html",
+      "datePublished": "2026-06-20",
+      "author": { "@type": "Person", "name": "WACD.ART" }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1} to{opacity:0.8} }
+.nebula { position:fixed;border-radius:50%;filter:blur(80px);opacity:0.12;pointer-events:none;z-index:0;animation:drift 20s infinite alternate ease-in-out; }
+.nebula-1 { width:500px;height:500px;background:var(--purple);top:-150px;left:-100px; }
+.nebula-2 { width:400px;height:400px;background:var(--pink);bottom:-100px;right:-100px;animation-delay:-8s; }
+@keyframes drift { from{transform:translate(0,0)} to{transform:translate(30px,20px)} }
+
+/* Nav */
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.97),transparent);backdrop-filter:blur(4px); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-links { display:flex;gap:32px;list-style:none; }
+.nav-links a { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s; }
+.nav-links a:hover { color:var(--white); }
+.nav-links a.active { color:var(--pink); }
+
+/* Main */
+main { position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:140px 40px 100px; }
+
+.page-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px;display:block; }
+h1 { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(28px,5vw,52px);line-height:1.1;margin-bottom:16px; }
+.page-desc { font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:64px;max-width:560px; }
+
+/* Grid */
+.blog-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px; }
+
+/* Card */
+.blog-card { display:block;text-decoration:none;padding:36px 32px;background:rgba(10,10,46,.5);border:1px solid rgba(123,47,255,.2);transition:all .4s;position:relative;overflow:hidden; }
+.blog-card::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,45,120,.05),transparent);opacity:0;transition:opacity .4s; }
+.blog-card:hover { border-color:var(--pink);transform:translateY(-4px);box-shadow:0 16px 40px rgba(255,45,120,.12); }
+.blog-card:hover::before { opacity:1; }
+
+.card-date { font-size:10px;letter-spacing:4px;color:var(--pink);margin-bottom:16px;display:block; }
+.card-title { font-family:'Unbounded',sans-serif;font-size:clamp(15px,2vw,18px);font-weight:400;line-height:1.5;margin-bottom:14px;color:var(--white);transition:color .3s; }
+.blog-card:hover .card-title { color:var(--cyan); }
+.card-excerpt { font-size:13px;line-height:1.8;color:var(--gray);margin-bottom:24px; }
+.card-tag { display:inline-block;font-size:9px;letter-spacing:3px;color:var(--cyan);border:1px solid rgba(0,245,212,.3);padding:3px 10px;text-transform:uppercase;margin-bottom:20px; }
+.card-link { font-size:11px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase; }
+.card-link::after { content:' →'; }
+
+/* Coming soon card */
+.blog-card.coming-soon { opacity:0.5;pointer-events:none; }
+.coming-label { font-size:10px;letter-spacing:3px;color:var(--gray);text-transform:uppercase;margin-top:16px;display:block; }
+
+.divider { width:100%;height:1px;background:linear-gradient(to right,transparent,var(--purple),transparent);margin:64px 0; }
+
+/* Back */
+.back-link { display:inline-block;font-size:11px;letter-spacing:3px;color:var(--cyan);text-decoration:none;text-transform:uppercase;border:1px solid rgba(0,245,212,.3);padding:12px 24px;transition:all .3s; }
+.back-link:hover { background:rgba(0,245,212,.08);transform:translateY(-2px); }
+
+footer { position:relative;z-index:1;padding:40px 24px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:60px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+/* Tablet */
+@media (max-width:900px) {
+  nav { padding:18px 24px; }
+  .nav-links { gap:20px; }
+  main { padding:120px 24px 80px; }
+}
+
+/* Mobile */
+@media (max-width:600px) {
+  nav { padding:16px 20px; }
+  .nav-logo { font-size:12px;letter-spacing:3px; }
+  .nav-links { display:none; }
+  main { padding:100px 16px 60px; }
+  .blog-grid { grid-template-columns:1fr; }
+  .blog-card { padding:24px 20px; }
+  .back-link { width:100%;text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo">WACD<span>.</span>ART</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <span class="page-label">Cosmic Notes</span>
+  <h1>Blog</h1>
+  <p class="page-desc">Honest notes about animation, creativity and building something from scratch. From cosmic dust and imagination.</p>
+
+  <div class="blog-grid">
+
+    <!-- ═══════════════════════════════════════════
+         СТАТЬЯ 1
+         Когда добавляешь новую статью — копируй
+         этот блок и меняй текст внутри
+    ════════════════════════════════════════════ -->
+    <a href="/blog/how-i-learned-animation.html" class="blog-card">
+      <span class="card-tag">Personal</span>
+      <span class="card-date">2026 · 06</span>
+      <h2 class="card-title">How I Learned Animation Without a Single Course</h2>
+      <p class="card-excerpt">I first tried animation in 2021 with PowerPoint and no plan. No courses, no mentor, no roadmap. Here is what actually happened.</p>
+      <span class="card-link">Read more</span>
+    </a>
+
+    <!-- ═══════════════════════════════════════════
+         СТАТЬЯ 2
+    ════════════════════════════════════════════ -->
+    <a href="/blog/why-cosmic-dust.html" class="blog-card">
+      <span class="card-tag">Brand Story</span>
+      <span class="card-date">2026 · 06</span>
+      <h2 class="card-title">Why Cosmic Dust? The Story Behind WACD</h2>
+      <p class="card-excerpt">WACD stands for We Are Cosmic Dust. Here is where that phrase came from — and why it still shapes everything I create.</p>
+      <span class="card-link">Read more</span>
+    </a>
+
+    <!-- ═══════════════════════════════════════════
+         СТАТЬЯ 3 — Coming soon
+    ════════════════════════════════════════════ -->
+    <div class="blog-card coming-soon">
+      <span class="card-tag">Tutorial</span>
+      <span class="card-date">2026 · 07</span>
+      <h2 class="card-title">Alight Motion: What I Actually Use and Why</h2>
+      <p class="card-excerpt">A practical breakdown of my mobile animation toolkit.</p>
+      <span class="coming-label">· Coming soon ·</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         СТАТЬЯ 4 — Coming soon
+    ════════════════════════════════════════════ -->
+    <div class="blog-card coming-soon">
+      <span class="card-tag">Business</span>
+      <span class="card-date">2026 · 07</span>
+      <h2 class="card-title">Building a Creative Brand with Zero Budget</h2>
+      <p class="card-excerpt">Honest notes from the road.</p>
+      <span class="coming-label">· Coming soon ·</span>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <a href="/" class="back-link">← Back to Home</a>
+</main>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 80; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.4+.1}`;
+  bg.appendChild(s);
+}
+</script>
+</body>
+</html>
