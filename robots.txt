@@ -1,0 +1,39 @@
+# WACD.ART — robots.txt
+# Разрешаем всем поисковикам и AI-ботам индексировать сайт
+
+User-agent: *
+Allow: /
+
+# Google (обычный поиск)
+User-agent: Googlebot
+Allow: /
+
+# Google-Extended = Gemini AI Overviews и другие AI-продукты Google
+User-agent: Google-Extended
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Claude / Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+# Bing / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://wacd.art/sitemap.xml
