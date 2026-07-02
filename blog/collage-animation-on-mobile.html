@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make Collage Animation on Mobile: My Full Process — WACD.ART</title>
+<meta name="description" content="A real collage animator's workflow — from idea to finished film using only a phone. Alight Motion for animation, CapCut for editing. No desktop software needed.">
+<meta property="og:title" content="How to Make Collage Animation on Mobile: My Full Process — WACD.ART">
+<meta property="og:description" content="From idea to finished collage animation using only a phone. My real workflow with Alight Motion and CapCut.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wacd.art/blog/collage-animation-on-mobile.html">
+<meta property="og:image" content="https://wacd.art/Collage.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wacd.art/Collage.png">
+<link rel="canonical" href="https://wacd.art/blog/collage-animation-on-mobile.html">
+<meta name="author" content="WACD.ART">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Make Collage Animation on Mobile: My Full Process",
+  "description": "A real collage animator's workflow from idea to finished film using only a phone — Alight Motion for animation, CapCut for final editing.",
+  "image": "https://wacd.art/Collage.png",
+  "author": {"@type": "Person", "name": "WACD.ART", "url": "https://wacd.art"},
+  "publisher": {"@type": "Organization", "name": "WACD.ART", "url": "https://wacd.art"},
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02",
+  "url": "https://wacd.art/blog/collage-animation-on-mobile.html",
+  "keywords": ["collage animation mobile", "Alight Motion tutorial", "CapCut animation", "how to make collage animation", "mobile animation workflow", "2D animation phone"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you make collage animation on a phone?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. I create all my collage animations entirely on mobile using two apps — Alight Motion for animating each scene and CapCut for final assembly, transitions, sound effects and music. No desktop software, no tablet required."}
+    },
+    {
+      "@type": "Question",
+      "name": "What apps do you need for collage animation on mobile?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I use two apps: Alight Motion for building and animating scenes — cutting character pieces, keyframe animation, effects and lip sync. Then CapCut for assembling scenes in order, adding transitions, sound effects and music. Each app does what it does best."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do you find images for collage animation?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I use a mix of sources — images found online, photos I take myself, backgrounds generated with AI tools, and elements I draw by hand. Usually one project combines several of these. The mix is part of what gives collage animation its distinctive texture."}
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to make a collage animation?",
+      "acceptedAnswer": {"@type": "Answer", "text": "It depends entirely on complexity. A short 15-second scene can take a few hours. A 10-minute film with character dialogues and multiple scenes took months of work. The most time-consuming part is frame-by-frame lip sync — every mouth position drawn individually."}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1} to{opacity:0.8} }
+.nebula { position:fixed;border-radius:50%;filter:blur(80px);opacity:0.12;pointer-events:none;z-index:0;animation:drift 20s infinite alternate ease-in-out; }
+.nebula-1 { width:500px;height:500px;background:var(--purple);top:-150px;left:-100px; }
+.nebula-2 { width:400px;height:400px;background:var(--pink);bottom:-100px;right:-100px;animation-delay:-8s; }
+@keyframes drift { from{transform:translate(0,0)} to{transform:translate(30px,20px)} }
+
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.97),transparent);backdrop-filter:blur(4px); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-back { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s; }
+.nav-back:hover { color:var(--cyan); }
+
+.article-hero { position:relative;z-index:1;width:100%;max-height:320px;overflow:hidden;margin-top:72px; }
+.article-hero img { width:100%;height:320px;object-fit:cover;object-position:center;display:block;filter:brightness(0.45); }
+.article-hero-overlay { position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--deep));pointer-events:none; }
+
+main { position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 24px 80px; }
+
+.article-meta { margin-bottom:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap; }
+.article-label { font-size:10px;letter-spacing:5px;color:var(--pink);text-transform:uppercase;border:1px solid rgba(255,45,120,.3);padding:4px 12px; }
+.article-date { font-size:11px;letter-spacing:3px;color:var(--gray); }
+
+h1 { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(22px,4.5vw,44px);line-height:1.2;margin-bottom:24px;color:var(--white); }
+h2 { font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(15px,2.5vw,20px);line-height:1.4;margin-bottom:16px;color:var(--white);margin-top:8px; }
+
+.article-intro { font-size:clamp(14px,2vw,16px);line-height:2;color:var(--gray);margin-bottom:48px;border-left:2px solid var(--pink);padding-left:20px; }
+
+.article-body p { font-size:clamp(13px,1.8vw,15px);line-height:2.1;color:var(--gray);margin-bottom:24px; }
+.article-body strong { color:var(--white); }
+.article-body em { color:var(--white);font-style:italic; }
+
+.step-block { background:rgba(10,10,46,.5);border:1px solid rgba(123,47,255,.25);padding:28px 32px;margin:32px 0;border-left:3px solid var(--pink); }
+.step-num { font-family:'Orbitron',monospace;font-size:11px;letter-spacing:4px;color:var(--pink);margin-bottom:12px;display:block; }
+
+.app-block { background:rgba(10,10,46,.5);border:1px solid rgba(0,245,212,.2);padding:28px 32px;margin:32px 0;border-left:3px solid var(--cyan); }
+.app-label { font-family:'Orbitron',monospace;font-size:11px;letter-spacing:4px;color:var(--cyan);margin-bottom:12px;display:block; }
+
+.pull-quote { font-family:'Unbounded',sans-serif;font-size:clamp(15px,2.5vw,19px);font-weight:300;line-height:1.7;color:var(--white);border-left:3px solid var(--cyan);padding:20px 24px;margin:40px 0;background:rgba(0,245,212,.04);border-radius:0 4px 4px 0; }
+
+.divider { width:100%;height:1px;background:linear-gradient(to right,transparent,var(--purple),transparent);margin:40px 0; }
+
+.faq-section { margin-top:56px; }
+.faq-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:20px;display:block; }
+.faq-title { font-family:'Orbitron',monospace;font-size:clamp(18px,3vw,24px);margin-bottom:24px; }
+.faq-list { display:flex;flex-direction:column;gap:2px; }
+.faq-item { padding:24px;background:rgba(10,10,46,.5);border:1px solid rgba(123,47,255,.25);transition:border-color .3s; }
+.faq-item:hover { border-color:var(--cyan); }
+.faq-q { font-family:'Unbounded',sans-serif;font-size:clamp(13px,2vw,15px);font-weight:400;color:var(--white);margin-bottom:10px; }
+.faq-a { font-size:clamp(12px,1.8vw,13px);line-height:1.9;color:var(--gray); }
+
+.author-block { margin-top:56px;padding:28px;border:1px solid rgba(123,47,255,.3);background:rgba(10,10,46,.5);display:flex;flex-direction:column;gap:8px; }
+.author-label { font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase; }
+.author-name { font-family:'Orbitron',monospace;font-size:clamp(14px,2vw,16px); }
+.author-desc { font-size:clamp(12px,1.8vw,13px);color:var(--gray);line-height:1.8; }
+.author-links { display:flex;gap:16px;margin-top:8px;flex-wrap:wrap; }
+.author-links a { font-size:11px;letter-spacing:2px;color:var(--cyan);text-decoration:none;transition:color .3s; }
+.author-links a:hover { color:var(--white); }
+
+.back-link { display:inline-block;margin-top:48px;font-size:11px;letter-spacing:3px;color:var(--cyan);text-decoration:none;text-transform:uppercase;border:1px solid rgba(0,245,212,.3);padding:12px 24px;transition:all .3s; }
+.back-link:hover { background:rgba(0,245,212,.08);transform:translateY(-2px); }
+
+footer { position:relative;z-index:1;padding:40px 24px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:60px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+@media (max-width:900px) {
+  nav { padding:18px 24px; }
+  main { padding:40px 20px 60px; }
+  .article-hero img { height:240px; }
+}
+@media (max-width:600px) {
+  nav { padding:16px 20px; }
+  .nav-logo { font-size:12px;letter-spacing:3px; }
+  .article-hero { margin-top:60px; }
+  .article-hero img { height:180px; }
+  main { padding:32px 16px 60px; }
+  .pull-quote { padding:16px 18px;margin:28px 0; }
+  .step-block, .app-block { padding:20px; }
+  .back-link { width:100%;text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo">WACD<span>.</span>ART</a>
+  <a href="/blog/" class="nav-back">← Blog</a>
+</nav>
+
+<div class="article-hero">
+  <img src="/Collage.png" alt="Collage animation process by WACD.ART">
+  <div class="article-hero-overlay"></div>
+</div>
+
+<main>
+  <div class="article-meta">
+    <span class="article-label">Process</span>
+    <span class="article-date">July 2026</span>
+  </div>
+
+  <h1>How to Make Collage Animation on Mobile: My Full Process</h1>
+
+  <p class="article-intro">I create all my collage animations entirely on a phone — no desktop, no tablet. Here is my real workflow from the first idea to the finished film, using Alight Motion and CapCut.</p>
+
+  <div class="article-body">
+
+    <p>People often assume that serious animation requires a powerful computer and expensive software. My experience is different. Everything I make — including a 10-minute animated film with full character dialogues — was made on mobile, using two free apps.</p>
+
+    <p>The workflow I am about to describe is not a shortcut. It is a real production process that produces real results. It is just entirely mobile.</p>
+
+    <div class="divider"></div>
+
+    <h2>The two apps I use</h2>
+
+    <div class="app-block">
+      <span class="app-label">APP 01 — ALIGHT MOTION</span>
+      <h2>Animation</h2>
+      <p><strong>Alight Motion</strong> is where I build and animate everything — characters, scenes, effects. It handles keyframe animation, parent layers, blend modes, distortion, glow and frame-by-frame work. This is where the animation actually happens.</p>
+    </div>
+
+    <div class="app-block">
+      <span class="app-label">APP 02 — CAPCUT</span>
+      <h2>Assembly and editing</h2>
+      <p><strong>CapCut</strong> is where I put everything together. After animating each scene separately in Alight Motion, I import them into CapCut in the right order, add transitions between scenes, layer in sound effects and music. CapCut does not animate — it edits. That distinction matters.</p>
+    </div>
+
+    <div class="pull-quote">Two apps, one phone. That is the entire studio.</div>
+
+    <div class="divider"></div>
+
+    <h2>My process step by step</h2>
+
+    <div class="step-block">
+      <span class="step-num">STEP 01 — IDEA</span>
+      <h2>What do I want to show?</h2>
+      <p>Most of the time clients give me creative freedom — they say what they need but let me decide how to do it. So the first thing I do is find the idea. Who are the characters? What is the story? What feeling should the viewer have at the end? I think about this before touching any app.</p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-num">STEP 02 — SCENES</span>
+      <h2>Planning the structure</h2>
+      <p>Once I have the idea I break it into scenes. How many? What happens in each one? What order do they go in? This is a simple plan — sometimes just notes, sometimes rough sketches. It saves a lot of time later because I know exactly what I need to build.</p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-num">STEP 03 — CHARACTERS</span>
+      <h2>Building the cast</h2>
+      <p>I create characters from separate pieces — a head, a body, arms, legs, a mouth. Each piece is its own layer in Alight Motion. For <strong>collage animation</strong> this means cutting real photos or illustrations into parts. The character does not exist as one image — it is an assembly of movable pieces.</p>
+      <p>The mouth is the most complex part. If a character speaks, I need every mouth position — every vowel, every consonant — drawn or cut separately. This is frame-by-frame lip sync, and it is slow, careful work.</p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-num">STEP 04 — BACKGROUNDS</span>
+      <h2>Building the world</h2>
+      <p>Backgrounds come from different places depending on the project. Sometimes I find images online. Sometimes I photograph something myself — a texture, a surface, a sky. Sometimes I generate a background with AI tools and then paint over it or combine it with other elements.</p>
+      <p>Usually one project uses a mix of all three. That mix is part of what gives collage animation its distinctive texture — it feels assembled from the real world rather than drawn from scratch.</p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-num">STEP 05 — ANIMATION IN ALIGHT MOTION</span>
+      <h2>Bringing it to life</h2>
+      <p>I animate scene by scene. Each scene is its own Alight Motion project. I place the background, add the character pieces, then set keyframes for movement — position, scale, rotation. I use parent layers to connect body parts so they move together naturally. I add effects — glow for cosmic scenes, distortion to make characters breathe, star fields for space backgrounds.</p>
+      <p>When the scene is done I export it as a video file and save it with a clear name so the order stays obvious.</p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-num">STEP 06 — ASSEMBLY IN CAPCUT</span>
+      <h2>Putting it all together</h2>
+      <p>Once all scenes are animated and exported, I open CapCut and import them in order. Here I add transitions between scenes, adjust timing, layer in sound effects and choose the music. CapCut is fast and intuitive for this kind of work — it is not an animation tool, but as a mobile editor for assembling finished scenes it does exactly what I need.</p>
+      <p>The final export comes out of CapCut as a finished film.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pull-quote">The phone is not a limitation. It is just where the work happens.</div>
+
+    <p>I have been asked many times whether mobile animation is "real" animation. The answer is in the work. What matters is not the device — it is the idea, the craft and the time you put in.</p>
+
+    <p>You can watch the results on <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" style="color:var(--cyan)">YouTube</a> and <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" style="color:var(--cyan)">Instagram</a>. If you want to order a collage animation for your project, you can reach me through the <a href="/#contact" style="color:var(--cyan)">contact form</a>.</p>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="faq-section">
+    <span class="faq-label">Questions & Answers</span>
+    <h2 class="faq-title">FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Can you make collage animation on a phone?</p>
+        <p class="faq-a">Yes. I create all my collage animations entirely on mobile using two apps — Alight Motion for animating each scene and CapCut for final assembly, transitions, sound effects and music. No desktop software, no tablet required.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What apps do you need for collage animation on mobile?</p>
+        <p class="faq-a">I use two apps: Alight Motion for building and animating scenes — cutting character pieces, keyframe animation, effects and lip sync. Then CapCut for assembling scenes in order, adding transitions, sound effects and music. Each app does what it does best.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do you find images for collage animation?</p>
+        <p class="faq-a">I use a mix of sources — images found online, photos I take myself, backgrounds generated with AI tools, and elements I draw by hand. Usually one project combines several of these. The mix is part of what gives collage animation its distinctive texture.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long does it take to make a collage animation?</p>
+        <p class="faq-a">It depends entirely on complexity. A short 15-second scene can take a few hours. A 10-minute film with character dialogues and multiple scenes took months of work. The most time-consuming part is frame-by-frame lip sync — every mouth position drawn individually.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="author-block">
+    <span class="author-label">Written by</span>
+    <span class="author-name">WACD.ART</span>
+    <p class="author-desc">2D animator and motion artist. Collage animation, vector animation and character animation for brands and creative projects.</p>
+    <div class="author-links">
+      <a href="https://www.youtube.com/@wacd.cartoons" target="_blank">▶ YouTube</a>
+      <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank">◈ Instagram</a>
+      <a href="https://www.behance.net/natamomo" target="_blank">✦ Behance</a>
+    </div>
+  </div>
+
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+</main>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 80; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.4+.1}`;
+  bg.appendChild(s);
+}
+</script>
+</body>
+</html>
