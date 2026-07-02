@@ -41,7 +41,13 @@
       <news:title>Why Cosmic Dust? The Story Behind WACD</news:title>
     </news:news>
   </url>
-
+<url>
+  <loc>https://wacd.art/blog/alight-motion-what-i-use.html</loc>
+  <lastmod>2026-07-01</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.8</priority>
+</url>
+        
   <!-- Страница блога -->
   <url>
     <loc>https://wacd.art/blog/</loc>
