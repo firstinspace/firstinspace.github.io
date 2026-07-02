@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alight Motion: What I Actually Use and Why — WACD.ART</title>
+<meta name="description" content="A practical breakdown of Alight Motion from a collage animator who made a 10-minute cartoon with dialogues entirely on mobile. Features, techniques and honest thoughts.">
+<meta property="og:title" content="Alight Motion: What I Actually Use and Why — WACD.ART">
+<meta property="og:description" content="A practical breakdown of Alight Motion from a collage animator who made a 10-minute cartoon with dialogues entirely on mobile.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wacd.art/blog/alight-motion-what-i-use.html">
+<meta property="og:image" content="https://wacd.art/2danimation.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wacd.art/2danimation.png">
+<link rel="canonical" href="https://wacd.art/blog/alight-motion-what-i-use.html">
+<meta name="author" content="WACD.ART">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Alight Motion: What I Actually Use and Why",
+  "description": "A practical breakdown of Alight Motion from a collage animator who made a 10-minute cartoon with dialogues entirely on mobile.",
+  "image": "https://wacd.art/2danimation.png",
+  "author": {"@type": "Person", "name": "WACD.ART", "url": "https://wacd.art"},
+  "publisher": {"@type": "Organization", "name": "WACD.ART", "url": "https://wacd.art"},
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "url": "https://wacd.art/blog/alight-motion-what-i-use.html",
+  "keywords": ["Alight Motion", "collage animation", "2D animation mobile", "Alight Motion tutorial", "animation app", "Alight Motion features"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Alight Motion good for 2D animation?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alight Motion is a capable mobile app for 2D and collage animation. It supports keyframe animation, parent layers, blend modes, effects and frame-by-frame animation. It is not as powerful as After Effects, but it is a serious tool — I used it to create a 10-minute animated film with full dialogues entirely on mobile."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the parent layer feature in Alight Motion?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The parent layer feature in Alight Motion lets you attach objects to a control layer. When the parent moves, all attached objects follow. This is essential for character animation — you can move an entire character or body part as one unit while each element still has its own animation."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can you do frame-by-frame animation in Alight Motion?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alight Motion supports frame-by-frame animation. I use it specifically for lip sync — drawing each mouth position frame by frame to match dialogue. It is time-consuming but produces natural-looking speech animation."}
+    },
+    {
+      "@type": "Question",
+      "name": "What effects are available in Alight Motion?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Alight Motion has a wide range of effects including glow, distortion, deformation, particle effects like star fields, blend modes and more. The glow effect is particularly useful for neon and cosmic visuals. The star field effect can create flying stars moving in any direction with adjustable size and speed."}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1} to{opacity:0.8} }
+.nebula { position:fixed;border-radius:50%;filter:blur(80px);opacity:0.12;pointer-events:none;z-index:0;animation:drift 20s infinite alternate ease-in-out; }
+.nebula-1 { width:500px;height:500px;background:var(--purple);top:-150px;left:-100px; }
+.nebula-2 { width:400px;height:400px;background:var(--pink);bottom:-100px;right:-100px;animation-delay:-8s; }
+@keyframes drift { from{transform:translate(0,0)} to{transform:translate(30px,20px)} }
+
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.97),transparent);backdrop-filter:blur(4px); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-back { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s; }
+.nav-back:hover { color:var(--cyan); }
+
+.article-hero { position:relative;z-index:1;width:100%;max-height:320px;overflow:hidden;margin-top:72px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(123,47,255,.2),transparent 70%); }
+.article-hero img { height:280px;width:auto;max-width:100%;object-fit:contain;display:block;mix-blend-mode:screen;padding:20px; }
+.article-hero-overlay { position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--deep));pointer-events:none; }
+
+main { position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 24px 80px; }
+
+.article-meta { margin-bottom:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap; }
+.article-label { font-size:10px;letter-spacing:5px;color:var(--pink);text-transform:uppercase;border:1px solid rgba(255,45,120,.3);padding:4px 12px; }
+.article-date { font-size:11px;letter-spacing:3px;color:var(--gray); }
+
+h1 { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(22px,4.5vw,44px);line-height:1.2;margin-bottom:24px;color:var(--white); }
+h2 { font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(16px,2.5vw,22px);line-height:1.4;margin-bottom:16px;color:var(--white);margin-top:8px; }
+
+.article-intro { font-size:clamp(14px,2vw,16px);line-height:2;color:var(--gray);margin-bottom:48px;border-left:2px solid var(--pink);padding-left:20px; }
+
+.article-body p { font-size:clamp(13px,1.8vw,15px);line-height:2.1;color:var(--gray);margin-bottom:24px; }
+.article-body strong { color:var(--white); }
+.article-body em { color:var(--white);font-style:italic; }
+
+.feature-block { background:rgba(10,10,46,.5);border:1px solid rgba(123,47,255,.25);padding:28px 32px;margin:32px 0;border-left:3px solid var(--cyan); }
+.feature-num { font-family:'Orbitron',monospace;font-size:11px;letter-spacing:4px;color:var(--cyan);margin-bottom:12px;display:block; }
+
+.pull-quote { font-family:'Unbounded',sans-serif;font-size:clamp(15px,2.5vw,19px);font-weight:300;line-height:1.7;color:var(--white);border-left:3px solid var(--cyan);padding:20px 24px;margin:40px 0;background:rgba(0,245,212,.04);border-radius:0 4px 4px 0; }
+
+.divider { width:100%;height:1px;background:linear-gradient(to right,transparent,var(--purple),transparent);margin:40px 0; }
+
+.faq-section { margin-top:56px; }
+.faq-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:20px;display:block; }
+.faq-title { font-family:'Orbitron',monospace;font-size:clamp(18px,3vw,24px);margin-bottom:24px; }
+.faq-list { display:flex;flex-direction:column;gap:2px; }
+.faq-item { padding:24px;background:rgba(10,10,46,.5);border:1px solid rgba(123,47,255,.25);transition:border-color .3s; }
+.faq-item:hover { border-color:var(--cyan); }
+.faq-q { font-family:'Unbounded',sans-serif;font-size:clamp(13px,2vw,15px);font-weight:400;color:var(--white);margin-bottom:10px; }
+.faq-a { font-size:clamp(12px,1.8vw,13px);line-height:1.9;color:var(--gray); }
+
+.author-block { margin-top:56px;padding:28px;border:1px solid rgba(123,47,255,.3);background:rgba(10,10,46,.5);display:flex;flex-direction:column;gap:8px; }
+.author-label { font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase; }
+.author-name { font-family:'Orbitron',monospace;font-size:clamp(14px,2vw,16px); }
+.author-desc { font-size:clamp(12px,1.8vw,13px);color:var(--gray);line-height:1.8; }
+.author-links { display:flex;gap:16px;margin-top:8px;flex-wrap:wrap; }
+.author-links a { font-size:11px;letter-spacing:2px;color:var(--cyan);text-decoration:none;transition:color .3s; }
+.author-links a:hover { color:var(--white); }
+
+.back-link { display:inline-block;margin-top:48px;font-size:11px;letter-spacing:3px;color:var(--cyan);text-decoration:none;text-transform:uppercase;border:1px solid rgba(0,245,212,.3);padding:12px 24px;transition:all .3s; }
+.back-link:hover { background:rgba(0,245,212,.08);transform:translateY(-2px); }
+
+footer { position:relative;z-index:1;padding:40px 24px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:60px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+@media (max-width:900px) {
+  nav { padding:18px 24px; }
+  main { padding:40px 20px 60px; }
+}
+@media (max-width:600px) {
+  nav { padding:16px 20px; }
+  .nav-logo { font-size:12px;letter-spacing:3px; }
+  .article-hero { margin-top:60px; }
+  .article-hero img { height:180px; }
+  main { padding:32px 16px 60px; }
+  .pull-quote { padding:16px 18px;margin:28px 0; }
+  .feature-block { padding:20px; }
+  .back-link { width:100%;text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+
+<nav>
+  <a href="/" class="nav-logo">WACD<span>.</span>ART</a>
+  <a href="/blog/" class="nav-back">← Blog</a>
+</nav>
+
+<div class="article-hero">
+  <img src="/2danimation.png" alt="Alight Motion collage animation by WACD.ART">
+  <div class="article-hero-overlay"></div>
+</div>
+
+<main>
+  <div class="article-meta">
+    <span class="article-label">Tutorial</span>
+    <span class="article-date">July 2026</span>
+  </div>
+
+  <h1>Alight Motion: What I Actually Use and Why</h1>
+
+  <p class="article-intro">I have been animating in Alight Motion for years. I used it to create a 10-minute animated film with full character dialogues — entirely on mobile. Here is what I actually use and why it works.</p>
+
+  <div class="article-body">
+
+    <p>Alight Motion is a mobile animation app. It is not After Effects — and it does not try to be. But if you know how to use it, it is a genuinely powerful tool for 2D and collage animation.</p>
+
+    <p>I work in a style I call <strong>cosmic collage animation</strong> — building characters and scenes from separate image pieces, photos and textures, then bringing them to life frame by frame. Alight Motion is where all of that happens.</p>
+
+    <div class="divider"></div>
+
+    <h2>How I build a collage character</h2>
+
+    <p>For every character, I cut separate pieces — parts of a body, a face, hands, whatever needs to move independently. Each piece becomes its own layer in the project. Then I animate each layer separately.</p>
+
+    <p>When a character needs to <strong>speak</strong>, I draw all the mouth positions frame by frame. Every sound requires a different mouth shape. It is slow, careful work — but it is the only way to get natural-looking lip sync. I am one of the first animators who created a 10-minute collage cartoon with full dialogues in Alight Motion, and I know exactly how labour-intensive this is.</p>
+
+    <p>When a character does not need to speak, I use <strong>keyframe animation</strong> — setting position, scale and rotation at different points in time and letting the app fill in the movement between them.</p>
+
+    <div class="divider"></div>
+
+    <h2>The features I use most</h2>
+
+    <div class="feature-block">
+      <span class="feature-num">01 — POSITION & SCALE</span>
+      <h2>Movement and depth</h2>
+      <p>The basic position tool is something I use in every single project. But what I love even more is the <strong>scale function</strong> — making an object larger or smaller over time. This creates a sense of depth, as if something is flying toward you or disappearing into the distance. It turns a flat image into a three-dimensional space.</p>
+    </div>
+
+    <div class="feature-block">
+      <span class="feature-num">02 — PARENT LAYER</span>
+      <h2>The feature that changes everything</h2>
+      <p>The <strong>parent layer</strong> is one of the most powerful things in Alight Motion. You attach objects to a control layer — and when the parent moves, everything attached to it follows. This is essential for character animation. You can move an entire arm as one unit while each finger still has its own movement. You can attach a character to a background and animate them together. It opens up enormous possibilities.</p>
+      <p>In Precomp you can also add <strong>null layers</strong> — invisible control objects that other layers follow along their own path. It gives you even more control over complex movement.</p>
+    </div>
+
+    <div class="feature-block">
+      <span class="feature-num">03 — BLEND MODES</span>
+      <h2>Making images feel like they belong together</h2>
+      <p>Blend modes control how layers interact with each other visually. For collage animation this is crucial — you are combining images from completely different sources, and blend modes are what make them feel like one unified scene rather than a pile of cut-outs.</p>
+    </div>
+
+    <div class="feature-block">
+      <span class="feature-num">04 — DISTORTION & DEFORMATION</span>
+      <h2>Making characters breathe</h2>
+      <p>The <strong>distortion and deformation</strong> tools let you warp and bend an object's shape over time. I use this to make characters literally breathe in the frame — the body expands slightly, then contracts. It adds organic life to what would otherwise be a still image. A character that breathes feels present in a way that nothing else achieves.</p>
+    </div>
+
+    <div class="feature-block">
+      <span class="feature-num">05 — GLOW EFFECT</span>
+      <h2>The magic of light</h2>
+      <p>I create <strong>cosmic surrealism</strong> — and the glow effect is one of my favourite tools for that. Apply it to any object and it begins to emit light. With the right settings you get a neon glow, a soft halo, or something that looks genuinely otherworldly.</p>
+      <p>Once, inspired by the holograms in Star Wars, I made a short video where my own head appeared as a hologram projected into a large hall. The glow effect was what made it look real. That is the kind of magic Alight Motion can produce when you push it.</p>
+    </div>
+
+    <div class="feature-block">
+      <span class="feature-num">06 — STAR FIELD EFFECT</span>
+      <h2>Space in motion</h2>
+      <p>The <strong>star field effect</strong> generates moving stars — flying left, right, or straight toward the viewer. You can adjust the size, speed and density. For cosmic animation this is an instant atmosphere — a living background that makes every scene feel like it exists somewhere in the universe.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pull-quote">Alight Motion is not After Effects. But in the right hands, on a phone, it can produce animation that surprises people — including people who use After Effects.</div>
+
+    <p>The app has a vast library of effects beyond what I have described here. Colour grading, masks, tracking, audio sync — it covers more than most people expect from a mobile tool.</p>
+
+    <p>Is it limiting compared to desktop software? Sometimes. But limitation forces creativity. Some of my best work came from finding unexpected ways around what the app could not do.</p>
+
+    <p>If you are curious what collage animation in Alight Motion actually looks like, you can watch my work on <a href="https://www.youtube.com/@wacd.cartoons" target="_blank" style="color:var(--cyan)">YouTube</a> and <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank" style="color:var(--cyan)">Instagram</a>.</p>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="faq-section">
+    <span class="faq-label">Questions & Answers</span>
+    <h2 class="faq-title">FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Is Alight Motion good for 2D animation?</p>
+        <p class="faq-a">Yes. Alight Motion is a capable mobile app for 2D and collage animation. It supports keyframe animation, parent layers, blend modes, effects and frame-by-frame animation. It is not as powerful as After Effects, but it is a serious tool — I used it to create a 10-minute animated film with full dialogues entirely on mobile.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What is the parent layer feature in Alight Motion?</p>
+        <p class="faq-a">The parent layer feature lets you attach objects to a control layer. When the parent moves, all attached objects follow. This is essential for character animation — you can move an entire character or body part as one unit while each element still has its own animation.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can you do frame-by-frame animation in Alight Motion?</p>
+        <p class="faq-a">Yes. Alight Motion supports frame-by-frame animation. I use it specifically for lip sync — drawing each mouth position frame by frame to match dialogue. It is time-consuming but produces natural-looking speech animation.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What effects are available in Alight Motion?</p>
+        <p class="faq-a">Alight Motion has a wide range of effects including glow, distortion, deformation, particle effects like star fields, blend modes and more. The glow effect is particularly useful for neon and cosmic visuals. The star field effect creates flying stars moving in any direction with adjustable size and speed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="author-block">
+    <span class="author-label">Written by</span>
+    <span class="author-name">WACD.ART</span>
+    <p class="author-desc">2D animator and motion artist. Collage animation, vector animation and character animation for brands and creative projects.</p>
+    <div class="author-links">
+      <a href="https://www.youtube.com/@wacd.cartoons" target="_blank">▶ YouTube</a>
+      <a href="https://www.instagram.com/wacd.art_cartoons/" target="_blank">◈ Instagram</a>
+      <a href="https://www.behance.net/natamomo" target="_blank">✦ Behance</a>
+    </div>
+  </div>
+
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+</main>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 80; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.4+.1}`;
+  bg.appendChild(s);
+}
+</script>
+</body>
+</html>
