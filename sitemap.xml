@@ -89,5 +89,20 @@
       <news:title>How to Make Collage Animation on Mobile: My Full Process</news:title>
     </news:news>
   </url>
+         <!-- Статья 5 -->
+  <url>
+    <loc>https://wacd.art/blog/pricing.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>WACD.ART — Cosmic Notes</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-02</news:publication_date>
+      <news:title>How Pricing Works</news:title>
+    </news:news>
+  </url>
 
 </urlset>
