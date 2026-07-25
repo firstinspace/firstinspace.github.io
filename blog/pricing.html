@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Pricing Works — WACD.ART</title>
+<meta name="description" content="An honest breakdown of how WACD.ART prices animation projects — collage animation, 2D character animation, motion design for brands and creative projects.">
+<meta property="og:title" content="How Pricing Works — WACD.ART">
+<meta property="og:description" content="An honest breakdown of how animation projects are priced at WACD.ART.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wacd.art/blog/pricing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1} to{opacity:0.9} }
+
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.95),transparent); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-links { display:flex;gap:32px;list-style:none; }
+.nav-links a { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s; }
+.nav-links a:hover { color:var(--white); }
+
+.article { position:relative;z-index:1;max-width:720px;margin:0 auto;padding:140px 40px 80px; }
+
+.article-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px; }
+.article-title { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(24px,5vw,48px);line-height:1.2;margin-bottom:8px; }
+.article-meta { font-size:11px;letter-spacing:3px;color:var(--cyan);margin-bottom:8px; }
+.article-meta a { color:var(--cyan);text-decoration:none; }
+.article-divider { width:60px;height:2px;background:var(--pink);margin:24px 0 40px; }
+
+.article p { font-size:14px;line-height:2;color:var(--gray);margin-bottom:20px; }
+.article p strong { color:var(--white); }
+.article h2 { font-family:'Unbounded',sans-serif;font-size:16px;font-weight:400;color:var(--white);margin:40px 0 16px; }
+
+.price-row { display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(123,47,255,.2); }
+.price-row:last-child { border-bottom:none; }
+.price-label { font-size:13px;color:var(--gray); }
+.price-value { font-size:13px;color:var(--cyan);letter-spacing:1px; }
+
+.usage-block { background:rgba(10,10,46,.6);border:1px solid rgba(123,47,255,.3);padding:24px;margin-bottom:12px; }
+.usage-type { font-size:12px;letter-spacing:3px;color:var(--pink);text-transform:uppercase;margin-bottom:8px; }
+.usage-desc { font-size:13px;line-height:1.8;color:var(--gray); }
+
+.process-step { display:flex;gap:20px;align-items:flex-start;margin-bottom:20px; }
+.step-num { font-family:'Orbitron',monospace;font-size:24px;font-weight:900;color:rgba(123,47,255,.3);flex-shrink:0;line-height:1; }
+.step-text { font-size:13px;line-height:1.8;color:var(--gray); }
+.step-text strong { color:var(--white); }
+
+.cta-block { background:rgba(123,47,255,.1);border:1px solid rgba(123,47,255,.4);padding:40px;text-align:center;margin-top:60px; }
+.cta-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px; }
+.cta-title { font-family:'Orbitron',monospace;font-size:24px;margin-bottom:16px; }
+.cta-desc { font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:24px; }
+.btn-primary { background:var(--pink);color:white;padding:14px 32px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s; }
+.btn-primary:hover { background:var(--white);color:var(--pink); }
+.btn-outline { background:transparent;color:var(--cyan);padding:14px 32px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cyan);display:inline-block;transition:all .3s;margin-left:12px; }
+
+.more-posts { margin-top:80px;padding-top:40px;border-top:1px solid rgba(123,47,255,.2); }
+.more-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:24px; }
+.post-links { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.post-link { border:1px solid rgba(255,45,120,.3);padding:20px;text-decoration:none;transition:all .3s;display:block; }
+.post-link:hover { border-color:var(--pink); }
+.post-link-date { font-size:10px;letter-spacing:4px;color:var(--pink);margin-bottom:8px; }
+.post-link-title { font-size:13px;color:var(--white);line-height:1.5; }
+
+.author { font-size:12px;color:var(--pink);letter-spacing:2px;margin-top:40px; }
+
+footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:80px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+@media (max-width:768px) {
+  nav { padding:20px; }
+  .nav-links { display:none; }
+  .article { padding:100px 20px 60px; }
+  .post-links { grid-template-columns:1fr; }
+  .btn-outline { margin-left:0;margin-top:12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+
+<nav>
+  <a href="/" class="nav-logo">WACD<span>.</span>ART</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="article">
+
+  <p class="article-label">Blog · Pricing</p>
+  <h1 class="article-title">How Pricing Works</h1>
+  <p class="article-meta">By <a href="/">WACD.ART</a> · July 2026</p>
+  <div class="article-divider"></div>
+
+  <p>People often ask me how I price a project before they even see a number — so here's an honest breakdown.</p>
+
+  <h2>What goes into the price</h2>
+
+  <p><strong>Length.</strong> A 10-second product card is a different job than a 60-second character story. More seconds usually means more unique frames and movements.</p>
+  <p><strong>Complexity.</strong> A simple collage transition costs less than a fully animated character with facial expressions and personality. The more moving parts, the more time it takes.</p>
+  <p><strong>Revisions.</strong> Every project includes a set number of revision rounds. Extra rounds beyond that are billed separately — this keeps things fair for both of us.</p>
+  <p><strong>Timeline.</strong> A short clip can be ready in a day, while a full animated short with voiceover and character animation can take several weeks. If you need a faster turnaround than the scope usually allows, that's something we can talk about — and it may affect the price.</p>
+  <p><strong>Usage.</strong> How you plan to use the animation affects both price and terms. See below.</p>
+
+  <h2>Types of usage</h2>
+
+  <div class="usage-block">
+    <div class="usage-type">One-time use</div>
+    <div class="usage-desc">The piece is used once or within a specific campaign — ads, a social post, local promotion. Standard pricing from the ranges below.</div>
+  </div>
+  <div class="usage-block">
+    <div class="usage-type">Unlimited rights</div>
+    <div class="usage-desc">If you want to use the material without restrictions on time or placement, that's a separate, higher price discussed individually.</div>
+  </div>
+  <div class="usage-block">
+    <div class="usage-type">Revenue-generating content</div>
+    <div class="usage-desc">If the piece itself becomes a source of ongoing income — ads on a monetized channel, paid access, resale — we agree on either a higher one-time price for full rights, or a revenue share.</div>
+  </div>
+
+  <p style="margin-top:20px;">This isn't bureaucracy for its own sake — it's how most creative industries work (photography, music licensing, illustration), and it protects both of us from misunderstandings.</p>
+
+  <h2>Rough starting ranges</h2>
+  <p>These are starting points, not fixed numbers — every project gets its own quote after a quick chat about what you need.</p>
+
+  <div style="margin:24px 0;">
+    <div class="price-row"><span class="price-label">Short marketplace/product clip (5–10 sec)</span><span class="price-value">from €30</span></div>
+    <div class="price-row"><span class="price-label">Reels/TikTok content (10–15 sec)</span><span class="price-value">from €50</span></div>
+    <div class="price-row"><span class="price-label">Collage animation with concept (15–30 sec)</span><span class="price-value">from €100</span></div>
+    <div class="price-row"><span class="price-label">Character animation with story (30–60 sec)</span><span class="price-value">from €200</span></div>
+    <div class="price-row"><span class="price-label">Book trailer / podcast intro</span><span class="price-value">from €80</span></div>
+  </div>
+
+  <h2>How the process works</h2>
+
+  <div class="process-step"><div class="step-num">01</div><div class="step-text"><strong>Brief</strong> — you tell me about the project, goals, and timeline</div></div>
+  <div class="process-step"><div class="step-num">02</div><div class="step-text"><strong>Concept</strong> — I send a direction or rough sketch for approval</div></div>
+  <div class="process-step"><div class="step-num">03</div><div class="step-text"><strong>Animation</strong> — the actual work happens here</div></div>
+  <div class="process-step"><div class="step-num">04</div><div class="step-text"><strong>Revisions</strong> — included rounds to fine-tune</div></div>
+  <div class="process-step"><div class="step-num">05</div><div class="step-text"><strong>Final delivery</strong> — polished file, ready to use</div></div>
+
+  <p>If your project involves long-term monetization or resale, we'll agree on that in writing before I start — a short written confirmation protects both of us.</p>
+
+  <p class="author">— WACD.ART · July 2026</p>
+
+  <div class="cta-block">
+    <p class="cta-label">Work With Me</p>
+    <h2 class="cta-title">Need animation for your project?</h2>
+    <p class="cta-desc">Collage animation, 2D character animation, motion design — for brands, social media and creative projects.</p>
+    <a href="/#contact" class="btn-primary">Order Animation ✦</a>
+    <a href="https://buymeacoffee.com" target="_blank" class="btn-outline">☕ Buy Me a Coffee</a>
+  </div>
+
+  <div class="more-posts">
+    <p class="more-label">More from the Blog</p>
+    <div class="post-links">
+      <a href="/blog/post1.html" class="post-link">
+        <p class="post-link-date">June 2026</p>
+        <p class="post-link-title">How I Learned Animation Without a Single Course</p>
+      </a>
+      <a href="/blog/post3.html" class="post-link">
+        <p class="post-link-date">June 2026</p>
+        <p class="post-link-title">Why Cosmic Dust? The Story Behind WACD</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist · All rights reserved</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 120; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.5+.1}`;
+  bg.appendChild(s);
+}
+</script>
+</body>
+</html>
