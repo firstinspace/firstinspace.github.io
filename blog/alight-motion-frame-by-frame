@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alight Motion: How I Actually Use It — WACD.ART</title>
-<meta name="description" content="Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D animation and collage animation. A practical breakdown from an independent animator.">
-<meta property="og:title" content="Alight Motion: How I Actually Use It — WACD.ART">
-<meta property="og:description" content="Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D and collage animation.">
-<link rel="canonical" href="https://wacd.art/blog/alight-motion-what-i-use-2.html">
-<link rel="alternate" hreflang="en" href="https://wacd.art/blog/alight-motion-what-i-use-2.html">
+<title>Frame by Frame in Alight Motion: A Deeper Look — WACD.ART</title>
+<meta name="description" content="A deeper look at frame by frame animation in Alight Motion — mouths from Sketchbook, vector points, layer tricks and why collage gives more freedom than traditional 2D.">
+<meta property="og:title" content="Frame by Frame in Alight Motion: A Deeper Look — WACD.ART">
+<meta property="og:description" content="How WACD.ART uses frame by frame animation in Alight Motion — a practical and personal breakdown.">
+<link rel="canonical" href="https://wacd.art/blog/alight-motion-frame-by-frame.html">
 <meta name="robots" content="index, follow">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Alight Motion: How I Actually Use It (And Why I Stopped Following Rules)",
-  "url": "https://wacd.art/blog/alight-motion-what-i-use.html",
-  "datePublished": "2026-08-01",
-  "dateModified": "2026-08-01",
+  "headline": "Frame by Frame in Alight Motion: A Deeper Look",
+  "url": "https://wacd.art/blog/alight-motion-frame-by-frame.html",
+  "datePublished": "2026-08-02",
+  "dateModified": "2026-08-02",
   "author": {"@type": "Person","name": "WACD.ART","url": "https://wacd.art/"},
   "publisher": {"@type": "Organization","name": "WACD.ART","url": "https://wacd.art/"},
-  "description": "Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D animation.",
-  "keywords": ["Alight Motion", "2D animation", "collage animation", "frame by frame animation", "mobile animation", "independent animator"]
+  "description": "A deeper look at frame by frame animation in Alight Motion — mouths, vectors, layers and collage freedom.",
+  "keywords": ["frame by frame animation", "Alight Motion", "collage animation", "2D animation mobile", "Sketchbook animation", "independent animator"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,43 +110,43 @@ footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1
 
 <article class="article">
 
-  <p class="article-label">Blog · Tools</p>
-  <h1 class="article-title">Alight Motion: How I Actually Use It (And Why I Stopped Following Rules)</h1>
+  <p class="article-label">Blog · Tutorial</p>
+  <h1 class="article-title">Frame by Frame in Alight Motion: A Deeper Look</h1>
   <p class="article-meta">By <a href="/">WACD.ART</a> · August 2026</p>
   <div class="article-divider"></div>
 
-  <p>There is a question I see often: can you do frame by frame animation in Alight Motion?</p>
-  <p>The short answer is yes. But the longer answer is more interesting.</p>
-  <p>I use a mix of everything — and I rarely decide in advance which technique I will use.</p>
+  <p>This is a follow-up to the previous post about how I use Alight Motion. That one got more attention than I expected — so let me go deeper into the part that people seem to want to understand most: frame by frame animation.</p>
 
-  <h2>How frame by frame works in my process</h2>
+  <h2>Mouths from Sketchbook — frame by frame lip sync</h2>
 
-  <p>When I need a character to speak, I draw mouths separately in Sketchbook — different shapes for different sounds — and then place them <strong>frame by frame</strong> under the voiceover. It is precise work, but it gives the animation life that automatic lip sync tools simply cannot replicate.</p>
-  <p>For vector animation, I use the vector drawing tool inside Alight Motion and manually set the points frame by frame. It sounds slow. Sometimes it is. But the result has a quality that feels handmade.</p>
+  <p>When a character needs to speak, I draw all the mouth shapes separately in <strong>Sketchbook</strong> — different positions for different sounds. Open, half-open, closed, round, wide. I export each one as a PNG.</p>
+  <p>Then in Alight Motion I place them on a layer, one by one, frame by frame — timed to match the voiceover. It is slow. But the result is something no automatic lip sync tool can give you: it feels <strong>alive</strong>.</p>
+  <p>The key is to not try to match every single sound perfectly. Match the rhythm. Match the emotion. The eyes and body do the rest.</p>
 
-  <h2>The feature I love most</h2>
+  <h2>Vector points — frame by frame the hard way</h2>
 
-  <p>The <strong>layer visibility toggle</strong> — the eye icon on the left side of each layer. I keep multiple versions of a scene hidden and switch between them while I work. No deleting, no committing too early. Just experimenting.</p>
-  <p>This one feature changed how I work. I stopped being afraid to try things.</p>
+  <p>For vector shapes I use the vector drawing tool inside Alight Motion. I set anchor points, then on the next keyframe I move those points to a new position. This gives smooth morphing between shapes.</p>
+  <p>It looks complicated. The first time I tried it, I deleted everything three times. But once you understand that <strong>each keyframe is just a new position for the same points</strong> — it becomes logical. Slow, but logical.</p>
+
+  <h2>The layer eye — my most important tool</h2>
+
+  <p>The small eye icon on the left side of each layer in Alight Motion is the feature I use more than anything else. I keep 4, 5, sometimes 10 versions of the same element — different mouths, different hand positions, different expressions — all hidden.</p>
+  <p>When I need one, I show it. When I don't, I hide it. <strong>Nothing gets deleted. Everything waits.</strong></p>
 
   <div class="quote-block">
-    <p>In my creative process, I don't think — I try. Whatever I like more, I keep. That's the whole method.</p>
+    <p>In my creative process, I don't think too much — I try. Whatever I like more, I keep. The hidden layers are my safety net and my laboratory at the same time.</p>
   </div>
 
-  <h2>Why collage animation gives more freedom than 2D</h2>
+  <h2>Why collage gives more freedom than drawing everything</h2>
 
-  <p>In a collage, I can cut out dozens of hands — a fist, an open palm, fingers pointing — and use whichever one fits the moment. Same with eyes, mouths, entire figures. The library of pieces grows with every project.</p>
-  <p>Traditional 2D animation asks you to draw everything from scratch. <strong>Collage animation says: use what exists, combine it in ways that have never been combined before.</strong></p>
-  <p>It reminds me of Louis de Funès in <em>L'homme orchestre</em> — humming musical ideas to his musicians, trusting them to catch his wave. That is exactly how I work in Alight Motion. I do not plan every frame. I catch the wave and follow it.</p>
+  <p>In traditional 2D animation, every frame is drawn from scratch. In collage animation, I build a library of pieces. A fist. An open palm. A closed eye. An open eye. Eyebrows up. Eyebrows down. Dozens of cut-out elements, ready to be combined.</p>
+  <p>This is not laziness. This is a different philosophy. <strong>The combinations are infinite. The result is always unique.</strong></p>
+  <p>It reminds me of Louis de Funès in <em>L'homme orchestre</em> — humming musical ideas to his musicians, trusting them to catch his wave. I don't direct every pixel. I set the pieces in motion and let them find the story.</p>
 
-  <h2>Can you do frame by frame animation in Alight Motion?</h2>
+  <h2>The honest answer to "can you do frame by frame in Alight Motion?"</h2>
 
-  <p>Yes — and here is how. Use keyframes on position, opacity or scale to move elements between frames. For mouth animation, import PNG images of each mouth shape and switch their visibility frame by frame. For vector shapes, use the vector tool and animate individual anchor points.</p>
-  <p>Alight Motion is not designed specifically for frame by frame animation the way Rough Animator or FlipaClip are. But it is flexible enough to do it — and the advantage is that you can combine frame by frame with all the other tools in the same project.</p>
-
-  <h2>The honest advice</h2>
-
-  <p>Stop trying to master one correct technique. Try everything. Hide the layers you are not sure about. Come back to them later. In Alight Motion, nothing is wasted — it is just waiting.</p>
+  <p>Yes. But it is not the same as dedicated frame by frame apps like FlipaClip or Rough Animator. Alight Motion is a compositing and motion tool that <em>can</em> do frame by frame — if you understand its logic.</p>
+  <p>The advantage: you can mix frame by frame with everything else in the same project. Collage elements, vector shapes, effects, text — all in one timeline. That combination is what makes my work look the way it does.</p>
 
   <p class="author">— WACD.ART · August 2026</p>
 
@@ -162,6 +161,10 @@ footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1
   <div class="more-posts">
     <p class="more-label">More from the Blog</p>
     <div class="post-links">
+      <a href="/blog/alight-motion-what-i-use.html" class="post-link">
+        <p class="post-link-date">July 2026</p>
+        <p class="post-link-title">Alight Motion: What I Actually Use and Why</p>
+      </a>
       <a href="/blog/how-i-learned-animation.html" class="post-link">
         <p class="post-link-date">June 2026</p>
         <p class="post-link-title">How I Learned Animation Without a Single Course</p>
@@ -169,10 +172,6 @@ footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1
       <a href="/blog/why-cosmic-dust.html" class="post-link">
         <p class="post-link-date">June 2026</p>
         <p class="post-link-title">Why Cosmic Dust? The Story Behind WACD</p>
-      </a>
-      <a href="/blog/pricing.html" class="post-link">
-        <p class="post-link-date">July 2026</p>
-        <p class="post-link-title">How Pricing Works</p>
       </a>
       <a href="/#blog" class="post-link">
         <p class="post-link-date">All articles</p>
