@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alight Motion: How I Actually Use It — WACD.ART</title>
+<meta name="description" content="Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D animation and collage animation. A practical breakdown from an independent animator.">
+<meta property="og:title" content="Alight Motion: How I Actually Use It — WACD.ART">
+<meta property="og:description" content="Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D and collage animation.">
+<link rel="canonical" href="https://wacd.art/blog/alight-motion-what-i-use-2.html">
+<link rel="alternate" hreflang="en" href="https://wacd.art/blog/alight-motion-what-i-use-2.html">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Alight Motion: How I Actually Use It (And Why I Stopped Following Rules)",
+  "url": "https://wacd.art/blog/alight-motion-what-i-use.html",
+  "datePublished": "2026-08-01",
+  "dateModified": "2026-08-01",
+  "author": {"@type": "Person","name": "WACD.ART","url": "https://wacd.art/"},
+  "publisher": {"@type": "Organization","name": "WACD.ART","url": "https://wacd.art/"},
+  "description": "Frame by frame, vectors, collage — how WACD.ART uses Alight Motion for 2D animation.",
+  "keywords": ["Alight Motion", "2D animation", "collage animation", "frame by frame animation", "mobile animation", "independent animator"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff2d78;
+  --cyan: #00f5d4;
+  --purple: #7b2fff;
+  --deep: #050510;
+  --white: #f0eeff;
+  --gray: #8888aa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--deep); color:var(--white); font-family:'Space Mono',monospace; overflow-x:hidden; }
+
+.stars-bg { position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none; }
+.star-particle { position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) infinite alternate; }
+@keyframes twinkle { from{opacity:0.1} to{opacity:0.9} }
+
+nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(5,5,16,.95),transparent); }
+.nav-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:14px;letter-spacing:4px;color:var(--white);text-decoration:none; }
+.nav-logo span { color:var(--pink); }
+.nav-links { display:flex;gap:32px;list-style:none; }
+.nav-links a { color:var(--gray);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:color .3s; }
+.nav-links a:hover { color:var(--white); }
+
+.article { position:relative;z-index:1;max-width:720px;margin:0 auto;padding:140px 40px 80px; }
+.article-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px; }
+.article-title { font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(22px,4vw,42px);line-height:1.2;margin-bottom:8px; }
+.article-meta { font-size:11px;letter-spacing:3px;color:var(--cyan);margin-bottom:8px; }
+.article-meta a { color:var(--cyan);text-decoration:none; }
+.article-divider { width:60px;height:2px;background:var(--pink);margin:24px 0 40px; }
+
+.article p { font-size:14px;line-height:2;color:var(--gray);margin-bottom:20px; }
+.article p strong { color:var(--white); }
+.article h2 { font-family:'Unbounded',sans-serif;font-size:16px;font-weight:400;color:var(--white);margin:40px 0 16px;padding-left:16px;border-left:2px solid var(--pink); }
+
+.quote-block { background:rgba(123,47,255,.1);border-left:3px solid var(--cyan);padding:24px 28px;margin:32px 0; }
+.quote-block p { color:var(--white);font-style:italic;margin:0; }
+
+.cta-block { background:rgba(123,47,255,.1);border:1px solid rgba(123,47,255,.4);padding:40px;text-align:center;margin-top:60px; }
+.cta-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:16px; }
+.cta-title { font-family:'Orbitron',monospace;font-size:22px;margin-bottom:16px; }
+.cta-desc { font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:24px; }
+.btn-primary { background:var(--pink);color:white;padding:14px 32px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s; }
+.btn-primary:hover { background:var(--white);color:var(--pink); }
+.btn-outline { background:transparent;color:var(--cyan);padding:14px 32px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid var(--cyan);display:inline-block;transition:all .3s;margin-left:12px; }
+
+.more-posts { margin-top:80px;padding-top:40px;border-top:1px solid rgba(123,47,255,.2); }
+.more-label { font-size:10px;letter-spacing:6px;color:var(--pink);text-transform:uppercase;margin-bottom:24px; }
+.post-links { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.post-link { border:1px solid rgba(255,45,120,.3);padding:20px;text-decoration:none;transition:all .3s;display:block; }
+.post-link:hover { border-color:var(--pink); }
+.post-link-date { font-size:10px;letter-spacing:4px;color:var(--pink);margin-bottom:8px; }
+.post-link-title { font-size:13px;color:var(--white);line-height:1.5; }
+.author { font-size:12px;color:var(--pink);letter-spacing:2px;margin-top:40px; }
+
+footer { position:relative;z-index:1;padding:40px;text-align:center;border-top:1px solid rgba(123,47,255,.2);margin-top:80px; }
+.footer-logo { font-family:'Orbitron',monospace;font-weight:900;font-size:16px;letter-spacing:4px;margin-bottom:8px; }
+.footer-logo span { color:var(--pink); }
+.footer-copy { font-size:11px;color:rgba(136,136,170,.5);letter-spacing:2px; }
+
+@media (max-width:768px) {
+  nav { padding:20px; }
+  .nav-links { display:none; }
+  .article { padding:100px 20px 60px; }
+  .post-links { grid-template-columns:1fr; }
+  .btn-outline { margin-left:0;margin-top:12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+
+<nav>
+  <a href="/" class="nav-logo">WACD<span>.</span>ART</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="article">
+
+  <p class="article-label">Blog · Tools</p>
+  <h1 class="article-title">Alight Motion: How I Actually Use It (And Why I Stopped Following Rules)</h1>
+  <p class="article-meta">By <a href="/">WACD.ART</a> · August 2026</p>
+  <div class="article-divider"></div>
+
+  <p>There is a question I see often: can you do frame by frame animation in Alight Motion?</p>
+  <p>The short answer is yes. But the longer answer is more interesting.</p>
+  <p>I use a mix of everything — and I rarely decide in advance which technique I will use.</p>
+
+  <h2>How frame by frame works in my process</h2>
+
+  <p>When I need a character to speak, I draw mouths separately in Sketchbook — different shapes for different sounds — and then place them <strong>frame by frame</strong> under the voiceover. It is precise work, but it gives the animation life that automatic lip sync tools simply cannot replicate.</p>
+  <p>For vector animation, I use the vector drawing tool inside Alight Motion and manually set the points frame by frame. It sounds slow. Sometimes it is. But the result has a quality that feels handmade.</p>
+
+  <h2>The feature I love most</h2>
+
+  <p>The <strong>layer visibility toggle</strong> — the eye icon on the left side of each layer. I keep multiple versions of a scene hidden and switch between them while I work. No deleting, no committing too early. Just experimenting.</p>
+  <p>This one feature changed how I work. I stopped being afraid to try things.</p>
+
+  <div class="quote-block">
+    <p>In my creative process, I don't think — I try. Whatever I like more, I keep. That's the whole method.</p>
+  </div>
+
+  <h2>Why collage animation gives more freedom than 2D</h2>
+
+  <p>In a collage, I can cut out dozens of hands — a fist, an open palm, fingers pointing — and use whichever one fits the moment. Same with eyes, mouths, entire figures. The library of pieces grows with every project.</p>
+  <p>Traditional 2D animation asks you to draw everything from scratch. <strong>Collage animation says: use what exists, combine it in ways that have never been combined before.</strong></p>
+  <p>It reminds me of Louis de Funès in <em>L'homme orchestre</em> — humming musical ideas to his musicians, trusting them to catch his wave. That is exactly how I work in Alight Motion. I do not plan every frame. I catch the wave and follow it.</p>
+
+  <h2>Can you do frame by frame animation in Alight Motion?</h2>
+
+  <p>Yes — and here is how. Use keyframes on position, opacity or scale to move elements between frames. For mouth animation, import PNG images of each mouth shape and switch their visibility frame by frame. For vector shapes, use the vector tool and animate individual anchor points.</p>
+  <p>Alight Motion is not designed specifically for frame by frame animation the way Rough Animator or FlipaClip are. But it is flexible enough to do it — and the advantage is that you can combine frame by frame with all the other tools in the same project.</p>
+
+  <h2>The honest advice</h2>
+
+  <p>Stop trying to master one correct technique. Try everything. Hide the layers you are not sure about. Come back to them later. In Alight Motion, nothing is wasted — it is just waiting.</p>
+
+  <p class="author">— WACD.ART · August 2026</p>
+
+  <div class="cta-block">
+    <p class="cta-label">Work With Me</p>
+    <h2 class="cta-title">Need animation for your project?</h2>
+    <p class="cta-desc">Collage animation, 2D character animation, motion design — for brands, social media and creative projects.</p>
+    <a href="/#contact" class="btn-primary">Order Animation ✦</a>
+    <a href="https://www.behance.net/natamomo" target="_blank" class="btn-outline">✦ See Portfolio</a>
+  </div>
+
+  <div class="more-posts">
+    <p class="more-label">More from the Blog</p>
+    <div class="post-links">
+      <a href="/blog/how-i-learned-animation.html" class="post-link">
+        <p class="post-link-date">June 2026</p>
+        <p class="post-link-title">How I Learned Animation Without a Single Course</p>
+      </a>
+      <a href="/blog/why-cosmic-dust.html" class="post-link">
+        <p class="post-link-date">June 2026</p>
+        <p class="post-link-title">Why Cosmic Dust? The Story Behind WACD</p>
+      </a>
+      <a href="/blog/pricing.html" class="post-link">
+        <p class="post-link-date">July 2026</p>
+        <p class="post-link-title">How Pricing Works</p>
+      </a>
+      <a href="/#blog" class="post-link">
+        <p class="post-link-date">All articles</p>
+        <p class="post-link-title">← Back to Cosmic Notes</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">WACD<span>.</span>ART</div>
+  <p class="footer-copy">© 2026 WACD.ART — 2D Animator · Motion Artist · All rights reserved</p>
+</footer>
+
+<script>
+const bg = document.getElementById('starsBg');
+for (let i = 0; i < 120; i++) {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*.5+.1}`;
+  bg.appendChild(s);
+}
+</script>
+</body>
+</html>
